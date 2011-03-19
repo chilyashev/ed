@@ -1,0 +1,3 @@
+<div id="links"><a id="home" href="<?=get_option("url")?>"><img src="<?=$c?>/img/house.png" />начало</a> <a id="contacts" href="<?=get_option("url")?>contacts.php">Контакти</a> <?=getPageTitles()?> <!--<a id="about" href="<?=get_option("url")?>about.php">Относно</a> <a id="help" href="<?=get_option("url")?>help.php">Помощ</a>-->
+  <? if($role == 0 || $role == 2){ echo '<a href="'.get_option("url").'/admin">Администрация</a>&nbsp;';}?>
+</div> 
