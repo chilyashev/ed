@@ -1,0 +1,68 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font:11px "Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif;
+}
+#loginfrm{
+	width:350px;
+	margin-top:80px;
+	margin-left:auto;
+	margin-right:auto;	
+	padding:16px 16px 40px 16px;
+	font-weight:normal;
+	-moz-border-radius:11px;
+	-khtml-border-radius:11px;
+	-webkit-border-radius:11px;
+	border-radius:5px;/*
+	background:#fff;
+	border:1px solid #e5e5e5;
+	-moz-box-shadow:rgba(200, 200, 200, 1) 0 4px 18px;
+	-webkit-box-shadow:rgba(200, 200, 200, 1) 0 4px 18px;
+	-khtml-box-shadow:rgba(200, 200, 200, 1) 0 4px 18px;
+	box-shadow:rgba(200, 200, 200, 1) 0 4px 18px;*/
+}
+#loginbtn{
+	background:#CCC;
+	padding:6px 10px;
+	border:none;
+	-moz-border-radius:11px;
+	-khtml-border-radius:11px;
+	-webkit-border-radius:11px;
+	float:right;
+	}
+#username, #pass, #egn{
+	font-size:24px;
+	width:97%;
+	padding:3px;
+	margin-top:2px;
+	margin-right:6px;
+	margin-bottom:16px;
+	border:1px solid #e5e5e5;
+	background:#fbfbfb;
+}
+
+label {
+	color: #000;
+}
+.nemezabravqi label {
+	line-height:19px;
+}
+
+#nazad{
+	background:-moz-linear-gradient(bottom, #000, #333);
+	background:-webkit-gradient(linear, left bottom, left top, from(#000), to(#333));
+background: grey;
+
+	padding:3px;
+	-moz-box-shadow:rgba(200, 200, 200, 1) 0 4px 16px;
+	-webkit-box-shadow:rgba(200, 200, 200, 1) 0 4px 16px;
+	-khtml-box-shadow:rgba(200, 200, 200, 1) 0 4px 16px;
+	box-shadow:rgba(200, 200, 200, 1) 0 4px 16px;
+}
+
+a{
+	color:#FFF;
+	text-decoration:none;
+	}
