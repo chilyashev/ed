@@ -25,8 +25,9 @@ switch($do){
 					}
 		break; //break news
 		case "pages";
-		if(isset($_GET['page_id'])){
+		if(isset($_GET['page_id']) && is_numeric($_GET['page_id'])){
 			getPage($_GET['page_id'], $ok, $role);
+			
 			}else{goHome();}
 		break;
 		default;

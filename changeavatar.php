@@ -38,7 +38,9 @@ switch($role){
 
 <h2>&raquo;Промяна на снимка</h2><br><br><br>
 <form enctype="multipart/form-data" action="" method="POST">
-		
+		<script type="text/javascript">
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Промяна на снимка");
+</script>
 		<table width="600px" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 				
