@@ -1,3 +1,8 @@
+</div>
+<!-- #main --> 
+<br />
+<br />
+<br />
 <div id="footer">Copyleft, sasli<span style="float:right;"><?=$version?></span><br />
 
 <?
@@ -11,3 +16,10 @@ $totaltime = ($tend - $tstart);
 printf ("Страницата зареди за %f секунди.", $totaltime);
 ob_flush();
 ?> </div></div>
+</div>
+<!-- #content -->
+</div>
+<!-- #wrapper --> 
+<br />
+<br />
+</body></html>
