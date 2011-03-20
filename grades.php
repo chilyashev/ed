@@ -1,11 +1,7 @@
 <?
 $c="./";
 include "inc/header.php";	
-?><!--
-<p>a&nbsp;</p>
-<p>&nbsp;</p>-->
-<div id="main">
-<?
+ 
 if($ok){
 	if($role == 1){
 		getGrades_e(getIDbyEGN($_COOKIE["egn"]), 1, 0);
@@ -20,20 +16,6 @@ if($ok){
 	else{
 		echo "Трябва да влезете, за да си видите отсъствията.";
 		}// else logged
-?>
-</div> <!-- #main -->
-<br />
-<br />
-<br />
-
-
-
-<?
+ 
 include "inc/footer.php";
-?></div><!-- #content -->
-</div> <!-- #wrapper -->
-<br />
-<br />
-
-</body>
-</html>
+?> 

@@ -112,12 +112,6 @@ echo "<center>".$sn."</center><br>";
 		</tr>
 </table>
 </form></p>
-</div> <!-- #main -->
-<?
+ <?
 include "inc/footer.php";
-?></div><!-- #content -->
-</div> <!-- #wrapper -->
-<br />
-<br />
-</body>
-</html>
+?> 

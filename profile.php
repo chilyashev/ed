@@ -257,14 +257,6 @@ switch($role){
 	break;
 }// switch role
 }// if !ok
-?>
-</p>
-</div> <!-- #main -->
-<?
+ 
 include "inc/footer.php";
-?></div><!-- #content -->
-</div> <!-- #wrapper -->
-<br />
-<br />
-</body>
-</html>
+?> 
