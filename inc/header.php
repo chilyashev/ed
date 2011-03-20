@@ -6,10 +6,9 @@ if(!file_exists("conf/fnoc.php")){
 <center>Липсва конфигурационният файл. Електронният дневник не е инсталиран. Отидете на <a href=\"install\">инсталацията</a>. Ако вече сте инсталирали, свържете се със системния си администратор.</center>");
 
 }
-$mtime = microtime();
-$mtime = explode(" ",$mtime);
-$mtime = $mtime[1] + $mtime[0];
-$tstart = $mtime;
+$starttime = microtime();
+$startarray = explode(" ", $starttime);
+$starttime = $startarray[1] + $startarray[0];
 include $c."conf/fnoc.php";
 include $c."inc/functions.php";	
 global $ok, $role;
