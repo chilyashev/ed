@@ -1,9 +1,12 @@
 <?
 $c="./";
 include "inc/header.php";	
-?><!--
-<p>a&nbsp;</p>
-<p>&nbsp;</p>-->
+?>
+<script type="text/javascript">
+actsidebarlink("#absp");
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Отсъствия");
+</script>
+<h2>&raquo;Отсъствия</h2><br /><br />
 <?
 /*** messy, messy... ***/
 if($ok){

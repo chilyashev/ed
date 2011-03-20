@@ -2,6 +2,10 @@
 $c="./";
 include "inc/header.php";	
 if(!$ok){echo "Нямате право да сте тук без да сте влезли";goHome();}else{
+	?><script type="text/javascript">
+actsidebarlink("#profil");
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Профил");
+</script><?
 switch($role){
 	case 0:
 	case 2:

@@ -2,7 +2,11 @@
 $c="./";
 include "inc/header.php";	
 ?>
-		<?
+ <script type="text/javascript">
+actsidebarlink("#zab");
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Забележки");
+</script>
+<?
 if($ok){
 	if($role == 1){
 	echo "<h2>&raquo;Забележки на ".getStudentDetail("ime", $id)."</h2><br /><br />";
