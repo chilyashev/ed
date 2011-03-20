@@ -150,7 +150,9 @@ e.preventDefault();
 			url: "process.php?do=addGrade",
 			data: "val="+val + "&predmetID=" + predmetID + "&opisanie=" + opisanie + "&uchenikID=" + uchenikID,
 			success: function(msg){
-				if(msg !=0){
+				if(msg =="err"){
+					
+					}else{
 				serror(msg);		
 				$('#mask').fadeOut("fast");
 				$('.window').fadeOut("fast");
@@ -369,8 +371,11 @@ function calendar(){
 		$(id).css("background", "black");
 		$(id).css("color", "#FFF");	
 		$(id).css("border-bottom", "3px solid blue");	
-		
 		}
 		
+	function actsidebarlink(id){
+		$(id).css("background", "#CFCFCF");
+		$(id).css("color", "black");	
+		}
 		
 			function gol(where){location.href = where;}
