@@ -3,8 +3,9 @@
 <br />
 <br />
 <br />
-<div id="footer">Copyleft, sasli<span style="float:right;"><?=$version?></span><br />
-
+<div id="footer">
+<p style="font-size: 0.8em;">Powered by Електронен дневник <?=$version?><br />
+© <a href="http://chilyashev.com" target="_blank">Mihail Chilyashev</a> 2011<br />
 <?
 $mtime = microtime();
 $mtime = explode(" ",$mtime);
@@ -15,7 +16,7 @@ $totaltime = ($tend - $tstart);
 
 printf ("Страницата зареди за %f секунди.", $totaltime);
 ob_flush();
-?> </div></div>
+?> </p></div></div>
 </div>
 <!-- #content -->
 </div>
