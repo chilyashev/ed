@@ -3,7 +3,7 @@ $c="./";
 include "inc/header.php";	
 ?>
 <script type="text/javascript">
-if(window.location.href.indexOf('page') >=0){ //za da ne se skapva single.php
+if(window.location.href.indexOf('page') >=0){
 }else{
 actlink("#home");
 }
@@ -89,19 +89,11 @@ else{ //ne e lognat
 <br />
 <h3>Последни новини:</h3>";
 	pagination("news", 3, 3, $ok, $role, 0);
-//getNews(6, $ok, $role);
 break;//break default
 }//switch do
 //}// if isset do
 ?>
 
-</div> <!-- #main -->
 <?
 include "inc/footer.php";
-?></div><!-- #content -->
-</div> <!-- #wrapper -->
-<br />
-<br />
-
-</body>
-</html>
+?>

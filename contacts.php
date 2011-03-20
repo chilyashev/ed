@@ -6,10 +6,6 @@ include "inc/header.php";
 ?><script type="text/javascript">
 actlink("#contacts")
 </script>
-<!--
-<p>a&nbsp;</p>
-<p>&nbsp;</p>-->
-<div id="main">
 		<table width="600px" border="0" cellspacing="5" cellpadding="5" style="vertical-align:top">
 				<tr>
 						<td width="41">e-mail</td>
@@ -21,17 +17,9 @@ actlink("#contacts")
 				</tr>
 				<tr>
 						<td height="29">Телефон</td>
-						<td>+0000000</td>
+						<td><?=get_option("phone")?></td>
 				</tr>
 		</table>
-</div> 
-<!-- #main -->
 <?
 include "inc/footer.php";
-?></div><!-- #content -->
-</div> <!-- #wrapper -->
-<br />
-<br />
-
-</body>
-</html>
+?>
