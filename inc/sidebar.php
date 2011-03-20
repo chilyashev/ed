@@ -66,7 +66,7 @@ case 3; // roditel
 <?
 break; //break 3
 }//switch
-echo "<li><a href=\"".get_option("url")."profile.php\">Профил</a></li>";
+echo "<li><a href=\"".get_option("url")."profile.php\" id=\"profil\">Профил</a></li>";
 echo '<li><a href="'.get_option("url").'logout.php">Изход</a></li>';
 }else{
 echo '<li></li>';
