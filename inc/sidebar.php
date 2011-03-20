@@ -55,9 +55,9 @@ case 1; //uchenik
 
 Тук можете да проверите оценките си, отсъствията и забележките
 etc, etc
-<li><a href="<?=get_option("url")?>grades.php">Оценки</a></li>
-<li><a href="<?=get_option("url")?>abs.php">Отсъствия</a></li>
-<li><a href="<?=get_option("url")?>zab.php">Забележки</a></li>
+<li><a href="<?=get_option("url")?>grades.php" id="grades">Оценки</a></li>
+<li><a href="<?=get_option("url")?>abs.php" id="absp">Отсъствия</a></li>
+<li><a href="<?=get_option("url")?>zab.php" id="zab">Забележки</a></li>
 
 <?
 break; //break 1
