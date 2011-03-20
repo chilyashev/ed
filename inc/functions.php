@@ -605,13 +605,13 @@ EOT;
 		
 			function getAllGrades($limit){
 			$q = mysql_query("SELECT * FROM `ocenka` LIMIT $limit");
-			echo "<table width=\"500px\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><th>val</th><th>predmet</th><th>date</th><th>uchenikID</th>";
+			echo "<table width=\"500px\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><th>Оценка</th><th>Предмет</th><th>Дата</th><th>ученик</th>";
 			while($r = mysql_fetch_array($q)){
 				echo "<tr>
     <td>$r[value] &nbsp;</td>
     <td>".getPredmetById($r['predmetID'])."</td>
     <td>$r[date]</td>
-	<td><a href=\"editUser.php?id=$r[uchenikID]\">".getNameById($r['uchenikID'], 1)."</a></td></tr>";
+	<td><a href=\"editUser.php?w=stu&id=$r[uchenikID]\">".getNameById($r['uchenikID'], 1)."</a></td></tr>";
 			}
 			echo "</table>";
 		}	
@@ -900,9 +900,35 @@ $v = 0;
 		$neizv = 0;
 		$bri = "";
 		$brn = "";
-		//echo "<a id=\"addAbs\" href=\"$uid\"><img src=\"".get_option("url")."img/add.png\"/></a><br />";
-		/*if(mysql_num_rows($q) <= 0){echo "Няма отсъствия за този ученик";}
-		else{*/
+if($rol == 1){
+	
+	
+	
+	
+	
+	while($r = mysql_fetch_array($q)){
+			if($r['type'] ==0){
+				//echo "Неизвинено отсъствие от $r[date]<br />";
+				$neizv++;
+				$brn .= "<br />(<a rel=\"tooltip\" title=\"$r[date]<hr />$r[opisanie]\">$r[date]</a>)";
+			}else{
+				//echo "Извинено отсъствие от $r[date]<br />";
+				$izv++;
+				$bri .= "<br />
+(<a rel=\"tooltip\" title=\"$r[date]<br />$r[opisanie]\">$r[date]</a>)";
+}
+			}
+		echo "Извинени: $izv $bri<hr>";
+		echo "Неизвинени: $neizv $brn";
+	
+	
+	
+	
+	
+	
+	
+	
+	}else{
 		while($r = mysql_fetch_array($q)){
 			if($r['type'] ==0){
 				//echo "Неизвинено отсъствие от $r[date]<br />";
@@ -917,7 +943,7 @@ $v = 0;
 			}
 		echo "Извинени: $izv $bri<hr>";
 		echo "Неизвинени: $neizv $brn";
-		//}//else
+}//else
 		}
 		
 		
@@ -1152,7 +1178,7 @@ srch;
 					}
 		}//update option
 		
-		function getTooltip($tip){echo '<a rel="tooltip" id="hlp" title="'.$tip.'"><img src="'.get_option("url").'img/q.png" /></a>';}
+		function getTooltip($tip){echo '<a rel="tooltip" id="hlp" title="'.$tip.'">'.getIcon("q.png", 16).'</a>';}
 		
 			
 			
