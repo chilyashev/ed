@@ -35,7 +35,7 @@ $q = mysql_query("SELECT * FROM `user` WHERE `username` = '$username' AND `passw
 		<td>Операции</td>
 </tr>	
 EOT;
-$q = mysql_query("SELECT * FROM `roditel` WHERE `state`=0 ORDER BY `date` ");
+$q = mysql_query("SELECT * FROM `roditel` WHERE `state` = 0 ORDER BY `date` ");
 $v=1;
 while($r=mysql_fetch_array($q)){
 	?>
@@ -44,7 +44,16 @@ while($r=mysql_fetch_array($q)){
 		<td><?=$r['username']?></td>
 		<td><?=$r['name']?></td>
 		<td><?=$r['email']?></td>
-		<td><?=getStudentDetail("ime", $r['kidID'])?></td>
+		<td><?
+		$kids = explode(", ", $r['kidID']);
+		$a=0;
+		//print_r($kids);
+		while($a < count($kids)){
+			echo "<a href=\"editUser.php?w=stu&id=$kids[$a]\">".getStudentDetail("ime", $kids[$a])."</a>";
+			echo ($a<count($kids)-1)? ", ":"";
+		$a++;
+		}
+		?></td>
 		<td><?=($r['state'] > 0)?"<span style=\"color:green\">да</span>":"<span style=\"color:red\">не</span>" ?></td>
 		<td><a href="editUser.php?w=par&id=<?=$r['id'];?>"><?=getIcon("edit.png", 16)?></a> <a id="delParent" href="<?=$r['id'];?>"><?=getIcon("delete.png", 16)?></a>  / <a href="<?=$r['id']?>" id="apprP"><?=getIcon("ok.png", 16)?></a> <a href="<?=$r['id']?>" id="unapprP"><? echo getIcon("cancel.png", 16)?></a> </td>
 </tr>

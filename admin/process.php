@@ -209,8 +209,7 @@ break; //break add
 		$newname = $_POST['name'];
 		$newegn = $_POST['egn'];
 		$nomer = $_POST['nomer'];
-		$newsnimka = $_POST['snimka'];
-		$newClassID = $_POST['class'];
+ 		$newClassID = $_POST['class'];
 		$email = $_POST['email'];
 		$address = $_POST['address'];
 
@@ -218,7 +217,6 @@ break; //break add
 `ime` = '$newname',
 `egn` = '$newegn',
 `nomerVklas` = '$nomer',
-`snimka` = '$newsnimka',
 `address` = '$address',
 `email` = '$email',
 `classID` = '$newClassID' WHERE `uchenik`.`id` ='$uid';");
@@ -261,11 +259,14 @@ NULL , '$name', '$dolu', '$gore', '$specialnost'
 	break;
 	
 	case "addGrade";
+	$okk = true;
 	$date = data();//date("l, F d Y H:i:s");
 	$val = htmlspecialchars($_POST['val']);
 	$predmetID = htmlspecialchars($_POST['predmetID']);
 	$opisanie = htmlspecialchars($_POST['opisanie']);	
 	$uchenikID = htmlspecialchars($_POST['uchenikID']);	
+	if(!is_numeric($val)){$okk= false;}
+	if($okk){
 	$q = mysql_query("INSERT INTO `ocenka` (
 `id` ,
 `value` ,
@@ -278,9 +279,11 @@ VALUES (
 NULL , '$val', '$predmetID', '$opisanie', '$date', '$uchenikID'
 );
 ");
-echo "$val $predmetID $opisanie $uchenikID";
-	if($q){echo "grade added"; return 1;}else{echo "BOOOM! ".mysql_error();return 0;}
-	
+//echo "$val $predmetID $opisanie $uchenikID";
+	if($q){echo "ok"; return 1;}else{echo "err";}
+}else{
+	echo "err";
+	}
 	break; //addgrade
 	
 	

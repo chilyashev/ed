@@ -14,7 +14,8 @@ if(isset($_POST['addOption'])){
 		$newdirektor = htmlspecialchars($_POST['direktor']);
 		$newaddress = nl2br(htmlspecialchars($_POST['address']));
 		$newurl = htmlspecialchars($_POST['url']);
-		if(update_option("title", $newtitle) && update_option("direktor", $newdirektor) && update_option("email", $newmail) && update_option("address", $newaddress) && update_option("url", $newurl)){
+		$newphone = htmlspecialchars($_POST['phone']);
+		if(update_option("title", $newtitle) && update_option("direktor", $newdirektor) && update_option("email", $newmail) && update_option("address", $newaddress) && update_option("url", $newurl) && update_option("phone", $newphone)){
 		wrn("Промените запазени!");
 		}
 		}
@@ -43,12 +44,18 @@ if(isset($_POST['addOption'])){
       		<input name="url" type="text" class="inp" id="url" value="<?=get_option("url")?>" size="50" /></td>
     </tr>
     <tr>
+      <td><label for="addres">Телефон</label>
+      		&nbsp;</td>
+      <td><input name="phone" type="text" class="inp" id="phone" value="<?=get_option("phone")?>" size="50" /></td>
+    </tr>
+	<tr>
       <td><label for="addres">Адрес</label>
       		&nbsp;</td>
       <td><textarea class="inp" name="address" cols="40" rows="6" id="address" ><?=preg_replace('/<br\\s*?\/??>/i', '', get_option("address"));?>
       </textarea></td>
     </tr>
-    <tr>
+    
+	<tr>
     		<td>&nbsp;</td>
     		<td>&nbsp;</td>
     		</tr>
@@ -91,7 +98,7 @@ if(isset($_POST['addOption'])){
 <strong>Име на училището</strong> - името на училището <small>(пример: ПГСАГ "Ангел Попов", гр. Велико Търново)</small> <br />	
 <strong>email на училището </strong> - електронният адрес за връзка на училището. <br />
 <strong>Директор</strong> - името на директора. <small>(Полето е свободно, защото директорът може да не желае да ползва системата.)</small><br />
-<strong>Адрес на дневника</strong> - Интернет адреса на страницата. Важно е това поле да е точно, защото иначе системата няма да работи. Адресът трябва да е <em>валиден</em> и да сочи към директорията, в която е инсталиран днвеника <small>(пример: <em>http://address.com/dnevnik)</em> </small><br />
+<strong>Адрес на дневника</strong> - Интернет адреса на страницата. Важно е това поле да е точно, защото иначе системата няма да работи. Адресът трябва да е <em>валиден</em> и да сочи към директорията, в която е инсталиран днвеника. Важно е да завършва с наклонена черта(<strong>/</strong>)!  <small>(пример: <em>http://address.com/dnevnik<strong>/</strong>)</em> </small><br />
 <br />
 <br />
  

@@ -288,9 +288,8 @@ e.preventDefault();
 			success: function(msg){
 				if(msg == "ok"){
 				serror(msg);
-				//location.href = "editUser.php?w=stu&id="+uid+"&message=0";
-				location.href = "?do=view&w=parents";
-				}else{serror("Something went wrong! Try again." + msg);location.href = "?do=view&w=parents";}
+				location.href = "editUser.php?w=stu&id="+uid+"&message=0";
+				}else{serror("Something went wrong! Try again." + msg);location.href = "editUser.php?w=stu&id="+uid+"&message=0";}
 			}
 					 });
 		//}//if t
