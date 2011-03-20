@@ -86,7 +86,7 @@ padding: 8px;
     <tr>
       <td>Лого</td>
       <td align="justify">Логото (или емблемата) на училището трябва да е изображение с размери 100x100 пиксела. Изображения, по-големи от това, ще бъдат оразмерявани.<br />      		
-    	<div id="ahead" style="background: #<?=get_option("headcolor")?>;"><div id="alogo"><a href=""><img src="<?=get_option("url")?>/img/logo/<?=get_option("logo")?>" height="80"/></a> <?=get_option("title");?><br />
+    	<div id="ahead" style="background: #<?=get_option("headcolor")?>;"><div id="alogo"><a href=""><img src="<?=get_option("url")?>/img/logo/<?=get_option("logo")?>" height="80"/></a> <span style="color: #<?=get_option("headfgcolor")?>"><?=get_option("title");?></span><br />
 </div> </div>
 <div id="amenu" style="background: #<?=get_option("headcolor")?>;"><div id="alinks"><a id="home" href=""><img src="<?=$c?>/img/house.png" />начало</a> <a id="contacts" href="">Контакти</a> <?=getPageTitles(false)?></div> </div>
       		
