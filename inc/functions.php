@@ -1358,6 +1358,7 @@ srch;
 			echo "Страниците се показват тук. Добавете няколко, за да ги видите.";
 			}else{
 			?>
+
 <table id="tbl" width="100%">
 
 		<tr id="ntitle">
@@ -1419,6 +1420,8 @@ srch;
 			?>
 		<script type="text/javascript">
 actlink('#page<?=$r['id']?>')
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; <?=$r['title']?>")
+
 </script>
 		<tr>
 				<td height="45"><h2><?=$r['title']?></h2></td>
