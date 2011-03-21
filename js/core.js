@@ -4,19 +4,10 @@ var uid;
 	 if ($.browser.msie && $.browser.version.substr(0,1) == '6'){
         $('#iesux').show();
 	}
-	  /* quick and dirty, fix later 
-	  	getA();
-	  	getC();
-		get("Subjs", "#subjs");
-	  
-	  */
-	
-	
-
 
 $("body").delegate("#addClass", "click", function(e){
 e.preventDefault();
-//$("#messages").html("add?");
+
 		var name = $("#name").val();
 		var dolu = $("#dolu").val();
 		var gore = $("#gore").val();
@@ -31,44 +22,6 @@ e.preventDefault();
 			}
 					 });
 });
-
-
-
-
-
-
-
-
-
-/*
-$("body").delegate("#loginEGN", "click", function(e){
-e.preventDefault();
-		var egn = $("#egn").val();		
-	
-		$.ajax({
-			type: "POST",
-			url: "inc/process.php?do=checkLogin",
-			data: "egn="+egn ,
-			success: function(msg){
-				serror(msg);
-				}
-					 });
-		
-});
-*/
-
-	
-	  
-	
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-
 
 	
 $("body").delegate("#closeErr", "click", function(e){
