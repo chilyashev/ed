@@ -1,7 +1,12 @@
 <? 
 include "../conf/fnoc.php";
-if(function_exists($_GET['method']) && isset($_GET['id'])){
+
+if(function_exists($_GET['method']) && isset($_GET['id']) && $_GET['method'] != "getAbs"){
 		$_GET['method']($_GET['id']);
+	}
+	
+if(function_exists($_GET['method']) && isset($_GET['id']) && isset($_GET['type'])){
+		$_GET['method']($_GET['id'], $_GET['type']);
 	}
 	
 if(function_exists($_GET['method']) && isset($_GET['user']) && isset($_GET['pass'])){
@@ -29,6 +34,8 @@ $output .= "<grade> \n";
 $output .= "<grade_id>" . $r['id'] . "</grade_id> \n";
 $output .= "<grade_val>" . $r['value'] . "</grade_val> \n";
 $output .= "<predmet_id>" . $r['predmetID'] . "</predmet_id> \n";
+$output .= "<uchenik_id>" . $r['uchenikID'] . "</uchenik_id> \n";
+$output .= "<date>" . $r['date'] . "</date> \n";
 $output .= "</grade> \n";
 			}
 
@@ -65,7 +72,50 @@ function login($user, $pass){
 			else{
 				echo "true"; 
 				}//veche moje da vleze
-
-		
 }
+
+
+function getKids($id){
+
+	$q = mysql_query("SELECT * FROM `roditel` WHERE `id` = $id");
+		while($r = mysql_fetch_array($q)){
+			echo str_replace(", ", " ", $r['kidID']);
+			}
+	}
+function getRodID($name){
+		$q = mysql_query("SELECT * FROM `roditel` WHERE `username` = '$name'");
+		while($r = mysql_fetch_array($q)){
+			echo $r['id'];
+			}			
+}
+
+function getStuName($id){
+	$q = mysql_query("SELECT * FROM `uchenik` WHERE `id` = $id");
+		while($r = mysql_fetch_array($q)){
+			echo $r['ime'];
+			}
+	}
+
+function getAbs($id, $type){
+		$q = mysql_query("SELECT * FROM `otsastvie` WHERE `uchenikID` = '$id' AND `type` = '$type'");
+		$w = 0;
+		while($r = mysql_fetch_array($q)){
+			$w++;
+			}
+		echo $w;
+	}
+
+
+
+
+
+
+	function cnt($tbl, $more =""){
+		$q = mysql_query("SELECT * FROM `$tbl` $more");
+		$w = 0;
+		while($r = mysql_fetch_array($q)){
+			$w++;
+			}
+		return $w;
+	}
 ?>
