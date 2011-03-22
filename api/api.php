@@ -99,13 +99,16 @@ function getStuName($id){
 function getAbs($id, $type){
 		$q = mysql_query("SELECT * FROM `otsastvie` WHERE `uchenikID` = '$id' AND `type` = '$type'");
 		$w = 0;
+		if(mysql_num_rows($q) < 1){
+			echo "Този ученик няма отсъствия.\n";
+			}
 		while($r = mysql_fetch_array($q)){
 			$w++;
 			}
 		echo $w;
 	}
 
-function getZab($id){
+function getZabXml($id){
 	//note 	predmetID 	date 	uchenikID 	userID
 			header('Content-type: text/xml');
 		$q = mysql_query("SELECT * FROM `notes` WHERE `uchenikID` = $id");
@@ -126,6 +129,26 @@ $output .= "</note> \n";
  
 	}
 
+function getZab($id){
+	//note 	predmetID 	date 	uchenikID 	userID
+		$q = mysql_query("SELECT * FROM `notes` WHERE `uchenikID` = $id");
+		if(mysql_num_rows($q) < 1){
+			echo "Този ученик няма забележки.\n";
+			}
+		while($r = mysql_fetch_array($q)){
+			echo "$r[note] от дата $r[date] в час по ".getSubjDetail("name", $r['predmetID'])."\n";
+			}
+	}
+
+
+
+function getSubjDetail($det, $uid){
+		$q = mysql_query("SELECT * FROM `predmet` WHERE `id` = $uid");
+			
+		while($r = mysql_fetch_array($q)){
+			return "$r[$det]";
+			}
+		}//get subj detail
 
 
 
