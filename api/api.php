@@ -105,7 +105,26 @@ function getAbs($id, $type){
 		echo $w;
 	}
 
+function getZab($id){
+	//note 	predmetID 	date 	uchenikID 	userID
+			header('Content-type: text/xml');
+		$q = mysql_query("SELECT * FROM `notes` WHERE `uchenikID` = $id");
+		$output  = "<?xml version=\"1.0\"?>\n";
+$output .= "<zab>\n";
+ while($r = mysql_fetch_array($q)){
+$output .= "<note> \n";
+$output .= "<note_id>" . $r['id'] . "</note_id> \n";
+$output .= "<note_val>" . $r['note'] . "</note_val> \n";
+$output .= "<predmet_id>" . $r['predmetID'] . "</predmet_id> \n";
+$output .= "<uchenik_id>" . $r['uchenikID'] . "</uchenik_id> \n";
+$output .= "<date>" . $r['date'] . "</date> \n";
+$output .= "</note> \n";
+			}
 
+		$output .= "</zab>";
+		echo $output;
+ 
+	}
 
 
 
