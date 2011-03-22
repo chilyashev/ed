@@ -99,9 +99,6 @@ function getStuName($id){
 function getAbs($id, $type){
 		$q = mysql_query("SELECT * FROM `otsastvie` WHERE `uchenikID` = '$id' AND `type` = '$type'");
 		$w = 0;
-		if(mysql_num_rows($q) < 1){
-			echo "Този ученик няма отсъствия.\n";
-			}
 		while($r = mysql_fetch_array($q)){
 			$w++;
 			}
