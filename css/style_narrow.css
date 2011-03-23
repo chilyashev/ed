@@ -201,12 +201,12 @@ padding:25px;
 #footer {
 	/*position:relative;
 	width:864px;*/
-	text-align:center;
+	/*text-align:center;*/
 	font-size:0.8em;
 	border-top: 3px solid black;
-	margin-top:20px;
+	margin-top:10px;
 	bottom:20px;
-	padding:20px;
+	padding:10px;
 	clear:both;
 }
 

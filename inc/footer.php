@@ -4,7 +4,8 @@
 <br />
 <br />
 <div id="footer">
-<p style="font-size: 0.8em;">Powered by Електронен дневник <?=$version?><br />
+<p style="font-size: 0.81em;"><a href="<?=get_option("url")?>">Начало</a> <a href="contacts.php">Контакти</a> <a href="tools.php">Инструменти</a></p>
+<p style="font-size: 0.8em; text-align:center;">Powered by Електронен дневник <?=$version?><br />
 © <a href="http://chilyashev.com" target="_blank">Mihail Chilyashev</a> 2011<br />
 <?
 $endtime = microtime();
