@@ -32,7 +32,7 @@ body {
 	-webkit-border-radius:11px;
 	float:right;
 	}
-#username, #pass, #egn{
+#username, #pass, #egn, #id{
 	font-size:24px;
 	width:97%;
 	padding:3px;
