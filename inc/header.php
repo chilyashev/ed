@@ -1,6 +1,6 @@
 <?
 ob_start();
-if(!file_exists("conf/fnoc.php")){
+if(!file_exists("conf/fnoc.php") || !INSIDE){
 	define("INSIDE", false);
 	die("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
 <center>Липсва конфигурационният файл. Електронният дневник не е инсталиран. Отидете на <a href=\"install\">инсталацията</a>. Ако вече сте инсталирали, свържете се със системния си администратор.</center>");
