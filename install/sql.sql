@@ -75,15 +75,30 @@ CREATE TABLE IF NOT EXISTS `ocenka` (
 INSERT INTO `ocenka` (`id`, `value`, `predmetID`, `opisanie`, `vid`, `date`, `uchenikID`) VALUES
 (1274, '5.55', '53', 'test', 0, '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:29:27', 46);
 
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+
 DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
-INSERT INTO `option` (`id`, `key`, `value`) VALUES(15, 'title', 'testschool');
+INSERT INTO `option` (`id`, `key`, `value`) VALUES
+(5, 'address', 'address'),
+(4, 'direktor', 'direktor'),
+(8, 'logo', 'logo.png'),
+(3, 'phone', '+1234567896'),
+(9, 'headcolor', '227bf0'),
+(11, 'headfgcolor', '000000');
+
 
 DROP TABLE IF EXISTS `otsastvie`;
 CREATE TABLE IF NOT EXISTS `otsastvie` (

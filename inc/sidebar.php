@@ -15,21 +15,33 @@ if($ok){
 			$snimka = getUserDetail("snimka", $id);
 	$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\" width=\"40\" />";
 		if(strlen($snimka) <3){
-			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"100\" /><br>";
+			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" width=\"40\" />";
 		}
 		
-		echo "$snimka<strong>Здравей, </strong>" . getNamebyID($id, $role) . "! <br />";
+		echo "$sn<strong>Здравей, </strong>" . getNamebyID($id, $role) . "! <br />";
 		break; //break normal
 		case 1;
-		 $id =getIDbyEGN($_COOKIE['egn']);
-	echo "<img src=\"".get_option("url")."img/userpics/".getStudentDetail("snimka", $id)."\" height=\"40\" style=\"float:left\"/>" . getNamebyEGN($_COOKIE['egn']) . "<br /><br />";
+		 $id = getIDbyEGN($_COOKIE['egn']);
+		 $snimka = getStudentDetail("snimka", $id);
+		$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\"  height=\"40\" />";
+		if(strlen($snimka) <3){
+			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"40\" /><br>";
+		}
+	echo "$sn" . getNamebyEGN($_COOKIE['egn']) . "<br /><br />";
 break; // break egn
 
 
 case 3;//normalen login
 		$role = 3;
 		$id = getID($_COOKIE['user'], "roditel");
-		echo "<img src=\"".get_option("url")."img/userpics/".getParentDetail("snimka", $id)."\" height=\"40\" /><strong>Здравей, </strong>" . getParentDetail("name", $id) . "! <a href=\"".get_option("url")."logout.php\">Изход</a><br />";
+		
+		$snimka = getParentDetail("snimka", $id);
+	$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\" height=\"40\" />";
+		if(strlen($snimka) <3){
+			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"40\" /><br>";
+		}
+ 
+		echo "$sn<strong>Здравей, </strong>" . getParentDetail("name", $id) . "! <a href=\"".get_option("url")."logout.php\">Изход</a><br />";
 		break; //break normal
 		
 		default;

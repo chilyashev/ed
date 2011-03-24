@@ -25,6 +25,7 @@ if(isset($_POST['save'])){
 	$url = getURL((!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
 $url = str_replace("install/", "", $url);
 $title = $_POST['title'];
+$mail = $_POST['email'];
 	$db = $_POST['db'];
 	if(!mysql_connect($host, $user, $pass) || !mysql_select_db($db)){
 		 echo("Грешка при свързването: ".mysql_error());
@@ -93,14 +94,15 @@ foreach($sql as $q)
 
 $q = mysql_query("INSERT INTO `option` (`id` ,`key` ,`value`)VALUES (NULL , 'url', '$url');");
 $q = mysql_query("INSERT INTO `option` (`id` ,`key` ,`value`)VALUES (NULL , 'title', '$title');");
-$q = mysql_query("INSERT INTO `option` (`id`, `key`, `value`) VALUES
+$q = mysql_query("INSERT INTO `option` (`id` ,`key` ,`value`)VALUES (NULL , 'email', '$mail');");
+/*$q = mysql_query("INSERT INTO `option` (`id`, `key`, `value`) VALUES
 (NULL, 'headfgcolor', '000000'),
 (NULL, 'headcolor', '0093DD'),
 (NULL, 'email', 'gmail@chucknorris.com'),
 (NULL, 'address', 'address<br />\r\n'),
 (NULL, 'direktor', 'direktor'),
 (NULL, 'logo', 'logo.png'),
-(NULL, 'phone', '+35912345678910');");
+(NULL, 'phone', '+35912345678910');");*/
 $p = md5("admin");
 //$q = mysql_query("
 //INSERT INTO `user` (`id`, `username`, `password`, `role`, `name`, `email`, `snimka`, `dateReg`, `predmetID`, `approved`, `classID`) VALUES
@@ -157,12 +159,12 @@ if($q){
 		<tr bgcolor="#D9DEFF">
 				<td>Име на училището</td>
 				<td><label for="title"></label>
-						<input type="text" name="title" id="title" /></td>
+						<input name="title" type="text" id="title" value="testschool" /></td>
 		</tr>
 		<tr bgcolor="#D9DEFF">
 				<td>Имейл</td>
 				<td><label for="email"></label>
-						<input type="text" name="email" id="email" /></td>
+						<input name="email" type="text" id="email" value="gmail@chucknorris.com" /></td>
 		</tr>
 		<tr bgcolor="#D9DEFF">
 				<td>&nbsp;</td>
