@@ -102,9 +102,9 @@ $q = mysql_query("INSERT INTO `option` (`id`, `key`, `value`) VALUES
 (NULL, 'logo', 'logo.png'),
 (NULL, 'phone', '+35912345678910');");
 $p = md5("admin");
-$q = mysql_query("
-INSERT INTO `user` (`id`, `username`, `password`, `role`, `name`, `email`, `snimka`, `dateReg`, `predmetID`, `approved`, `classID`) VALUES
-(NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2', 'Administrator', 'admin@nowhere.com', '', '16 ???? 2011 01:41:04', -9, 1, -9)");
+//$q = mysql_query("
+//INSERT INTO `user` (`id`, `username`, `password`, `role`, `name`, `email`, `snimka`, `dateReg`, `predmetID`, `approved`, `classID`) VALUES
+//(NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2', 'Administrator', 'admin@nowhere.com', '', '16 ???? 2011 01:41:04', -9, 1, -9)");
 
 if($q){
 	$ok = true;
