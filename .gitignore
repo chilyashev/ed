@@ -1,0 +1,7 @@
+conf/fnoc.php
+ing/userpics/*.jpg
+img/userpics/*.jpg
+img/userpics/*.png
+install/sql-*
+install/sql_*
+files/*
