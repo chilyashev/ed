@@ -41,7 +41,7 @@ include $c."inc/functions.php";
 <div id="mask"></div>
 <div id="dialog" class="window">
 </div>
- <div id="head"><div id="logo"><a href="<?=get_option("url")?>"><?=get_option("title")?></a></div><br />
+ <div id="head"><div id="logo"><a href="<?=get_option("url")?>">&raquo;<?=get_option("title")?></a></div><br />
 <div id="greeting">
 <?
 

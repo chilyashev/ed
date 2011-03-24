@@ -27,7 +27,7 @@ if(isset($inside)){
   </p>
 </form><br /><br />
 <div id="help">
-<?=getIcon("q.png", 16)?>Добавяне на родител<br />
+<?=getIcon("q.png", 16)?>Добавяне на клас<br />
 <em>Полета:</em><br />
 <strong>Клас</strong> - номерът на класа, долен и горен индекс. <small>(примери: 10<sub>7</sub><sup>г</sup>, 8<sub>д</sub>, 11)</small><br />
 <strong>Специалност</strong> - специалността на паралелката<br />

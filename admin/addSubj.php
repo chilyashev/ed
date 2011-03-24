@@ -60,7 +60,7 @@ if($q){
   </p>
 </form><br /><br />
 <div id="help">
-<?=getIcon("q.png", 16)?>Добавяне на родител<br />
+<?=getIcon("q.png", 16)?>Добавяне на предмет<br />
 <em>Полета:</em><br />
 <strong>Име</strong> - името на предмета<br />
 <strong>Учител</strong>	- учителят, който го преподава<br />
