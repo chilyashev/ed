@@ -24,13 +24,17 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && !empty($_GET['id'])){
 	border-radius: 6px;
 	padding: 3px;
 }
-#y a, #n a{text-decoration:none;}
+#y a{color:black;text-decoration:none;}
+#n a{color:black;text-decoration:none;}
 </style>
 <h2>&raquo;Изтриване на <?=getFileDetail("file", $id)?>?</h2>
 <br>
 <br>
+<center>
+<img src="../files/<?=getFileDetail("file", $id)?>" height="100" /><br /><br />
 <span id="y"><a href="?id=<?=$id?>&c=y">Да</a></span>
 <span id="n"><a href="files.php">Не</a></span>
+</center>
 <br>
 <br>
 <br>

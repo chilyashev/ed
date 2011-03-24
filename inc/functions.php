@@ -868,6 +868,18 @@ $v = 0;
 			}
 		}
 		
+		function getFileDetail($det, $pid){
+		$q = mysql_query("SELECT * FROM `files` WHERE `id` = $pid");
+			
+		while($r = mysql_fetch_array($q)){
+			return "$r[$det]";
+			}
+		}
+		function setFileDetail($wha, $det, $pid){
+		$q = mysql_query("UPDATE `files` SET `$wha` = '$det' WHERE `id` = $pid;");
+		if($q){echo "ok";}else{echo "err";}
+		}
+		
 		function setParentDetail($wha, $det, $pid){
 		$q = mysql_query("UPDATE `roditel` SET `$wha` = '$det' WHERE `id` = $pid;");
 		if($q){echo "ok";}else{echo "err";}
