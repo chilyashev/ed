@@ -251,7 +251,7 @@ NULL , '$name', '$dolu', '$gore', '$specialnost'
 );");
 
 		if($q){
-		echo "added class ". $name;
+		echo "Добавен клас ". $name;
 		}else{
 			echo "".mysql_error();
 		}
