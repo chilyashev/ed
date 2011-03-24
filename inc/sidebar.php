@@ -7,9 +7,16 @@
 if($ok){
 		switch ($role){
 		case -9;//normalen login
+		case 0;
+		case 2;
+		$snimka = getUserDetail("snimka", $id);
+	$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\" width=\"40\" />";
+		if(strlen($snimka) <3){
+			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"100\" /><br>";
+		}
 		$role = getRole($_COOKIE['user']);
 		$id = getID($_COOKIE['user']);
-		echo "<img src=\"".get_option("url")."img/userpics/".getUserDetail("snimka", $id)."\" height=\"40\" /><strong>Здравей, </strong>" . getNamebyID($id, $role) . "! <br />";
+		echo "$snimka<strong>Здравей, </strong>" . getNamebyID($id, $role) . "! <br />";
 		break; //break normal
 		case 1;
 		 $id =getIDbyEGN($_COOKIE['egn']);
