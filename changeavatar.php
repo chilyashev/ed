@@ -6,7 +6,7 @@ switch($role){
 	case 0:
 	case 2:
 	$snimka = getUserDetail("snimka", $id);
-	$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\" width=\"40\" />";
+	$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\" width=\"100\" />";
 		if(strlen($snimka) <3){
 			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"100\" /><br>";
 		}

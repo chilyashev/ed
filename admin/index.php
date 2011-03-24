@@ -19,6 +19,14 @@ $q = mysql_query("SELECT * FROM `user` WHERE `username` = '$username' AND `passw
 				$d = !isset($_GET['do']) ? "0":$_GET['do']; // a quickie //rev 160: WTF!?
 				switch($d){
 					default;
+					
+					if(file_exists("../install/index.php")){
+						
+						error("<a href=\"rminst.php\">Файлът install/index.php не е премахнат. За сигурността на приложението трябва да го премахнете. Кликнете тук, за да го премахнете.</a>");
+					echo "<br /><br /><br />";
+					}
+					
+					
 				if(cnt("roditel", "WHERE `state` = 0") > 0){
 				?>
 	  <h3>&nbsp;Родители, очакващи одобрение</h3>
