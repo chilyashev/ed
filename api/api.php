@@ -4,16 +4,16 @@ include "../conf/fnoc.php";
 if(function_exists($_GET['method']) && isset($_GET['id']) && $_GET['method'] != "getAbs"){
 		$_GET['method']($_GET['id']);
 	}
-	
-if(function_exists($_GET['method']) && isset($_GET['id']) && isset($_GET['type'])){
+else if(function_exists($_GET['method']) && isset($_GET['id']) && isset($_GET['type'])){
 		$_GET['method']($_GET['id'], $_GET['type']);
 	}
-	
-if(function_exists($_GET['method']) && isset($_GET['user']) && isset($_GET['pass'])){
+else if(function_exists($_GET['method']) && isset($_GET['user']) && isset($_GET['pass'])){
 		$_GET['method']($_GET['user'], $_GET['pass']);
 	}
-
-	
+	else{
+	echo "Unknown method";
+	}
+	/*
 function getAllUsers(){
 		$q = mysql_query("SELECT * FROM `user`");
 		$users = array();
@@ -21,8 +21,8 @@ function getAllUsers(){
 				$users[] = $user;
 			}
 		$users = json_encode($users);
-		echo /*$_GET['jsoncallback'].*/ '('. $users . ')';
-	}
+		//echo $_GET['jsoncallback']. '('. $users . ')';
+	}*/
 
 function getGrades($id){
 	header('Content-type: text/xml');
