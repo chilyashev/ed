@@ -11,7 +11,6 @@ where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Оценки");
  <?
 if($ok){
 		$vid = get_option("ocenkiVid");
-		echo $vid;
 	if($role == 1){
 
 		getGrades_e(getIDbyEGN($_COOKIE["egn"]), 1, $vid);

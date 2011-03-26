@@ -263,21 +263,23 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 			//}//else
 		} ///$vid == 1
 		else if ($vid == 0){ //grades.php?
-		echo 'HERE';
 				$classid = getClassID($uid);
 				//echo $classid;
 				$classname = getClassName($classid);
 				//echo $classname;
 				$predmeti = mysql_query("SELECT * FROM `predmet` WHERE `class` = '$classid'");
-				
+				echo <<<tbl
+	<table border=\"1\" width=\"660px\"><tr><td><b>Предмет</b></td><td><b>Оценка</b></td><td><b>Прибл. срочна оценка</b></td></tr>			
+tbl;
 				while($p = mysql_fetch_array($predmeti)){
+				
 				$ocenki = array(); // vsichki ocenki, za da smetna sredno po-lesno
 				$ocenkiv = ""; // promenliva za normalnite ocenki
 				$sr = 0;
 				$i = 0;
 				$ii = 0;
 				
-					
+				//	echo "<br><br>.<br><br>";
 				$q = mysql_query("SELECT * FROM `ocenka` WHERE `uchenikID` = '$uid' AND `predmetID` = '$p[id]' ORDER BY `date` ASC");
 					//echo "$p[name]: ".getGrades($uid, $p['id'])."<br />";
 				
@@ -291,17 +293,15 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 				 if($i > 0){
 			$sr = array_sum($ocenki)/count($ocenki);
 				 }
-					echo "<table width=\"\" id=\"subjtbl\" style=\"float:left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
-					echo "<tr><td id=\"subjh\">$p[name]";
-					if(isset($role)){
-					if($role != 1){
-					echo "<a id=\"addGrade\" href=\"$uid\" name = $p[id]><img src=\"".get_option("url")."img/add.png\"/></a>";
-					}
-					}
-					echo "</td></tr><tr><td border=1>Текущи оценки: ".$ocenkiv."</td></tr>";
-					echo "<tr><td>Приблизителна срочна оценка: </td><td>".number_format($sr, 2, '.', '')."</td></tr>";
-					echo "</table>";	
+				 
+				 echo "<tr><td>$p[name]</td><td>$ocenkiv</td>";
+					//echo "<table width=\"\" id=\"subjtbl\" style=\"float:left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+					/*echo "<td>";
+					echo "</td><tr><td border=1>Текущи оценки: ".$ocenkiv."</td></tr>";
+					echo "<tr><td>Приблизителна срочна оценка: </td><td>".number_format($sr, 2, '.', '')."</td></tr>";*/
+					echo "</tr>";
 					}//predmeti
+					echo "</table>";	
 				
 			//}//else
 			
@@ -310,7 +310,6 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 		
 		
 		else if ($vid == 3){ //grades.php?
-		echo 'HERE_3'; //edna tablica
 				$classid = getClassID($uid);
 				//echo $classid;
 				$classname = getClassName($classid);
