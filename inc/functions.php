@@ -285,7 +285,7 @@ tbl;
 				
 				while($r = mysql_fetch_array($q)){
                 $ocenki[$i] = $r['value'];          //        onmouseover=\"showGradeInfo('$r[opisanie]', '$r[date]')\"
-				$ocenkiv .=  "<span id=\"gra\" title=\"$r[opisanie]\" data=\"$r[date]\">".$r['value']."</span>, "; 
+				$ocenkiv .=  "<span id=\"gra\" style=\"border-right:1px solid black;padding-right:3px;\" title=\"$r[opisanie]\" data=\"$r[date]\">".$r['value']."</span> "; 
 				$i++;
 				//echo "$p[id]: $ocenkiv<br/>";
                  }
@@ -294,7 +294,7 @@ tbl;
 			$sr = array_sum($ocenki)/count($ocenki);
 				 }
 				 
-				 echo "<tr><td>$p[name]</td><td>$ocenkiv</td>";
+				 echo "<tr><td>$p[name]</td><td width=\"220px\">$ocenkiv</td><td>".number_format($sr, 2, '.', '')."</td>";
 					//echo "<table width=\"\" id=\"subjtbl\" style=\"float:left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
 					/*echo "<td>";
 					echo "</td><tr><td border=1>Текущи оценки: ".$ocenkiv."</td></tr>";
