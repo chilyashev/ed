@@ -221,6 +221,11 @@ echo "</em></a>";
 							include "editApp.php";
 						break;
 						
+						case "sdbr";
+ 							echo "<script type=\"text/javascript\">actadmlink('#sdbr')</script>";
+							echo "<h2>&raquo;Страничен текст</h2><br /><br />";
+							include "editSdbr.php";
+						break;
 							
 							
 							default;

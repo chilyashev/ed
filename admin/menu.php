@@ -73,6 +73,7 @@ if($ok)
 <div id="mnupart"><div class="ttl"><a class="tog" id="6">Външен вид</a></div>
 <ul id="a6">
 <li><a id="lgo" href="<?=get_option("url")?>admin/?do=edit&w=app">Лого</a></li>
+<li><a id="sdbr" href="<?=get_option("url")?>admin/?do=edit&w=sdbr">Страничен текст</a></li>
 </ul>
 </div>
 
