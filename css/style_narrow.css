@@ -27,8 +27,7 @@ label {
 body {
 	background:url(../img/bg.gif);
 	line-height: 1;
-	/*	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;*/
-	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	font-family: "Tahoma", Arial, Helvetica;
 	background-color:#999;
 }
 
@@ -37,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 h2{
-font:italic normal normal 24px/29px Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+font:italic normal normal 24px/29px Georgia,"Times New Roman","Bitstream Charter",Times;
 margin:0;
 line-height:35px;
 text-shadow:rgba(255,255,255,1) 0 1px 0;

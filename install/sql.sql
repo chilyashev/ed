@@ -98,7 +98,7 @@ INSERT INTO `option` (`id`, `key`, `value`) VALUES
 (3, 'phone', '+1234567896'),
 (9, 'headcolor', '227bf0'),
 (11, 'headfgcolor', '000000');
-
+(15, 'text', 'Ð”Ð¾Ð¿ÑŠÐ»Ð½Ð¸Ñ‚ÐµÐ»ÐµÐ½ Ñ‚ÐµÐºÑÑ‚\r\n');
 
 DROP TABLE IF EXISTS `otsastvie`;
 CREATE TABLE IF NOT EXISTS `otsastvie` (
