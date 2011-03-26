@@ -72,7 +72,6 @@ $egn = htmlspecialchars($_POST['egn']);
 				}
 			else{
 			$expire=time()+60*60*24*30;
-				//setcookie(name, value, expire, path, domain); 
 				setcookie("user", "", time()+3600, "/");
 				setcookie("pass", "", time()+3600, "/") ;
 				if(setcookie("egn", "$egn", $expire, "/")){		
@@ -86,7 +85,7 @@ $egn = htmlspecialchars($_POST['egn']);
 								<input name="egn" type="text" id="egn" />
 								<label for="id">Идентификационен код</label>
 								&nbsp;
-								<input name="id" type="text" id="id" value="//fixme" />
+								<!--<input name="id" type="text" id="id" value="//fixme" />-->
 								<br />
 								<input name="login" type="submit" id="login" value="Вход" />
 						</form>

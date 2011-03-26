@@ -58,7 +58,7 @@ else{
 Добре дошли в електронния дневник на <?=get_option("title")?><br />
 <?=get_option("text")?>
 
-<?=getSearch()?>
+<?=getSearch_i(0)?>
 
 
 
