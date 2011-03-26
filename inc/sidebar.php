@@ -55,9 +55,9 @@ else{
 		}?>
 </div><!-- profile -->
 <br />
-Добре дошли в електронния дневник на <?=get_option("title")?><br />
+Добре дошли в електронния дневник на <?=get_option("title")?><br /><br />
 <?=get_option("text")?>
-
+<br /><br />
 <?=getSearch_i(0)?>
 
 
