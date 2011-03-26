@@ -15,7 +15,8 @@ if(isset($_POST['addOption'])){
 		$newaddress = nl2br(htmlspecialchars($_POST['address']));
 		$newurl = htmlspecialchars($_POST['url']);
 		$newphone = htmlspecialchars($_POST['phone']);
-		if(update_option("title", $newtitle) && update_option("direktor", $newdirektor) && update_option("email", $newmail) && update_option("address", $newaddress) && update_option("url", $newurl) && update_option("phone", $newphone)){
+		$ocenkiVid = htmlspecialchars($_POST['ocenkiVid']);
+		if(update_option("title", $newtitle) && update_option("direktor", $newdirektor) && update_option("email", $newmail) && update_option("address", $newaddress) && update_option("url", $newurl) && update_option("phone", $newphone) && update_option("ocenkiVid", $ocenkiVid)){
 		wrn("Промените запазени!");
 		}
 		}
@@ -56,11 +57,20 @@ if(isset($_POST['addOption'])){
     </tr>
     
 	<tr>
-    		<td>&nbsp;</td>
-    		<td>&nbsp;</td>
-    		</tr>
+    		<td>Показване на оценките</td>
+    		<td><select class="inp" name="ocenkiVid" id="ocenkiVid">
+        <option value="0">В една таблица</option>
+        <option value="3">Отделна таблица за всеки предмет</option>
+      </select>;</td>
+    	</tr>
 
-      <td>&nbsp;</td>
+  <tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    	</tr>
+
+
+    <td>&nbsp;</td>
       <td><input class="inp" type="submit" name="save" id="save" value="Запази промените"></td>
     </tr>
     <tr>

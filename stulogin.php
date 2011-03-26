@@ -83,8 +83,6 @@ $egn = htmlspecialchars($_POST['egn']);
 ?>
 								<label for="egn">ЕГН</label>
 								<input name="egn" type="text" id="egn" />
-								<label for="id">Идентификационен код</label>
-								&nbsp;
 								<!--<input name="id" type="text" id="id" value="//fixme" />-->
 								<br />
 								<input name="login" type="submit" id="login" value="Вход" />

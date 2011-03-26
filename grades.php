@@ -10,10 +10,13 @@ where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Оценки");
 
  <?
 if($ok){
+		$vid = get_option("ocenkiVid");
+		echo $vid;
 	if($role == 1){
-		getGrades_e(getIDbyEGN($_COOKIE["egn"]), 1, 0);
+
+		getGrades_e(getIDbyEGN($_COOKIE["egn"]), 1, $vid);
 	}else if($role == 3){
-		getGrades_e(($_GET['id']), 1, 0);
+		getGrades_e(($_GET['id']), 1, $vid);
 	}else if(!isset($_GET['id'])){
 		echo "Вие не сте ученик.";
 		}

@@ -220,8 +220,7 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 	function getGrades_e($uid, $role, $vid=1){
 		$rol = getStudentRole(getUsernameById($uid));
 		if($vid == 1){
-		/*if($rol != 1){echo "not a student, no grades";}//if
-		else{*/
+		
 				$classid = getClassID($uid);
 				//echo $classid;
 				$classname = getClassName($classid);
@@ -263,22 +262,14 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 
 			//}//else
 		} ///$vid == 1
-		else{
-			
-			
-			
-			
-			
-			
-			
-			
-			/*if($rol != 1){echo "not a student, no grades";}//if
-		else{*/
+		else if ($vid == 0){ //grades.php?
+		echo 'HERE';
 				$classid = getClassID($uid);
 				//echo $classid;
 				$classname = getClassName($classid);
 				//echo $classname;
 				$predmeti = mysql_query("SELECT * FROM `predmet` WHERE `class` = '$classid'");
+				
 				while($p = mysql_fetch_array($predmeti)){
 				$ocenki = array(); // vsichki ocenki, za da smetna sredno po-lesno
 				$ocenkiv = ""; // promenliva za normalnite ocenki
@@ -314,19 +305,59 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 				
 			//}//else
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			}//else vid == 1
+		
+		
+		
+		else if ($vid == 3){ //grades.php?
+		echo 'HERE_3'; //edna tablica
+				$classid = getClassID($uid);
+				//echo $classid;
+				$classname = getClassName($classid);
+				//echo $classname;
+				$predmeti = mysql_query("SELECT * FROM `predmet` WHERE `class` = '$classid'");
+				
+				while($p = mysql_fetch_array($predmeti)){
+				$ocenki = array(); // vsichki ocenki, za da smetna sredno po-lesno
+				$ocenkiv = ""; // promenliva za normalnite ocenki
+				$sr = 0;
+				$i = 0;
+				$ii = 0;
+				
+					
+				$q = mysql_query("SELECT * FROM `ocenka` WHERE `uchenikID` = '$uid' AND `predmetID` = '$p[id]' ORDER BY `date` ASC");
+					//echo "$p[name]: ".getGrades($uid, $p['id'])."<br />";
+				
+				while($r = mysql_fetch_array($q)){
+                $ocenki[$i] = $r['value'];          //        onmouseover=\"showGradeInfo('$r[opisanie]', '$r[date]')\"
+				$ocenkiv .=  "<span id=\"gra\" title=\"$r[opisanie]\" data=\"$r[date]\">".$r['value']."</span>, "; 
+				$i++;
+				//echo "$p[id]: $ocenkiv<br/>";
+                 }
+		
+				 if($i > 0){
+			$sr = array_sum($ocenki)/count($ocenki);
+				 }
+					echo "<table width=\"\" id=\"subjtbl\" style=\"float:left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+					echo "<tr><td id=\"subjh\">$p[name]";
+					if(isset($role)){
+					if($role != 1){
+					echo "<a id=\"addGrade\" href=\"$uid\" name = $p[id]><img src=\"".get_option("url")."img/add.png\"/></a>";
+					}
+					}
+					echo "</td></tr><tr><td border=1>Текущи оценки: ".$ocenkiv."</td></tr>";
+					echo "<tr><td>Приблизителна срочна оценка: </td><td>".number_format($sr, 2, '.', '')."</td></tr>";
+					echo "</table>";	
+					}//predmeti
+				
+			//}//else
+			
+			}
+		
+		
+		
+		
+		
 		}
 		
 		
