@@ -55,12 +55,15 @@ $sql[\'pass\'] = "'.$pass.'";
 $sql[\'db_prefix\'] = ""; //в следващата версия...
 $sql[\'db\'] = $sql[\'db_prefix\']."'.$db.'";
 ###### /sql ######
-mysql_connect($sql[\'host\'], $sql[\'user\'], $sql[\'pass\']) or die("Error connecting to mysql: ".mysql_error());
-mysql_select_db($sql[\'db\']) or die("Error selecting db: ".mysql_error());
+if(mysql_connect($sql[\'host\'], $sql[\'user\'], $sql[\'pass\']) && mysql_select_db($sql[\'db\'])){
 define("INSIDE", "true");
 define("PATH", getcwd());
-?>
-';
+
+}//if ok
+else{
+die("Error connecting to mysql: ".mysql_error());
+ }
+?>';
 fwrite($fh, $data);
 fclose($fh);
 
