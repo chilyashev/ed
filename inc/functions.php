@@ -1009,7 +1009,7 @@ srch;
 			
 		echo <<<srch
 		<div id="searchfrm" style="margin:5px 0;">
-		<form method="post" action="search.php?t=$type">
+		<form method="post" action="search.php">
 		<input type="text" class="inp" id="search" name="search" value="$srch"  onFocus="if(this.value=='Търси...')this.value='';"/>
 srch;
 		if($btn){echo '<input type="submit" value="Търси" class="inp" name="searchbtn" id="searchbtn" />';}
