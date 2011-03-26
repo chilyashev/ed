@@ -88,7 +88,7 @@ function getRodID($name){
 			echo $r['id'];
 			}			
 }
-
+ 
 function getStuName($id){
 	$q = mysql_query("SELECT * FROM `uchenik` WHERE `id` = $id");
 		while($r = mysql_fetch_array($q)){
