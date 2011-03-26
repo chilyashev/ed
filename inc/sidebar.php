@@ -56,6 +56,11 @@ else{
 </div><!-- profile -->
 <br />
 Добре дошли в електронния дневник на <?=get_option("title")?><br />
+<?=get_option("text")?>
+
+<?=getSearch()?>
+
+
 
 <ul>
 <?

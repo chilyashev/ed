@@ -34,7 +34,7 @@ $mail = $_POST['email'];
 
 	if($okk){
 	$f = "../conf/fnoc.php";
-$fh = fopen($f, 'w+') or die("-Файлът не може да се отвори.");
+$fh = fopen($f, 'w+') or die("Файлът не може да се отвори.");
 $data = '<?
 error_reporting(E_ALL);
 ini_set("display_errors", 1); 

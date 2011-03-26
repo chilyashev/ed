@@ -12,9 +12,10 @@ $starttime = $startarray[1] + $startarray[0];
 include $c."conf/fnoc.php";
 include $c."inc/functions.php";	
 global $ok, $role;
+/*
 if(file_exists("install/index.php")){
 	error("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />Не сте изтрили install/index.php. За сигурността на системата, трябва да го изтриете");
-	}
+	}*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,6 +33,7 @@ if(file_exists("install/index.php")){
 </head>
 
 <body>
+<!-- insert random funny stuff in here -->
 <!--[if IE 6]>
 <?=getIeError()?>
 <![endif]-->

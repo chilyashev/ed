@@ -41,7 +41,7 @@ $q=mysql_query("UPDATE `option` SET `value` = '$f' WHERE `option`.`key` ='logo';
 
 if($q)
 {
-echo "uploaded";
+echo "Качено!<script>location.href=\"".get_option("url")".admin?do=edit&w=app\"</script>";
 }else{
 echo "error";
 exit;
