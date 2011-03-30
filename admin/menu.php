@@ -9,7 +9,9 @@ if($ok)
 <div class="ttl"><a class="tog" id="1">Общи</a></div>
 <ul id="a1">
 <!--<li class="ttl" id="1">Общи</li>
---><li><a href="<?=get_option("url")?>admin" id="dashboard">Начало</a></li>
+-->
+<li><a href="<?=get_option("url")?>admin" id="dashboard">Начало</a></li>
+<li><a href="<?=get_option("url")?>admin/stats.php" id="stats">Статистики</a></li>
 </ul>
 </div><!-- obshti -->
 
