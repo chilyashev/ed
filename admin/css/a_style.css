@@ -118,6 +118,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
 	font-size: 1px;
 	line-height: 0px;
 }
+#greeting{text-align:right;}
 #lmenu {
 	width:160px;
 	margin-left:10px;
