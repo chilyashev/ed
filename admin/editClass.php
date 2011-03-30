@@ -35,7 +35,7 @@ if(isset($_GET['id'])){
       Специалност
       <input class="inp" type="text" name="specialnost" id="specialnost" value="<?=getClassDetail("specialnost", $cid)?>" s>
     </p>
-    <input type="submit" name="save" id="save" value="{SAVE_CHANGES}" />
+    <input type="submit" name="save" id="save" value="Запази промените" />
     </form>
     <br />
 	<div>
