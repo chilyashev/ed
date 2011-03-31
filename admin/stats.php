@@ -24,7 +24,7 @@ while($r = mysql_fetch_array($q)){
 		?>
 </table>-->
 <?
-open_flash_chart_object( 360, 250, get_option("url").'admin/stats/ocenki.php', false );
+open_flash_chart_object( 460, 250, get_option("url").'admin/stats/ocenki.php', false );
 open_flash_chart_object( 360, 250, get_option("url").'admin/stats/ocenkip.php', false );
 echo "<br /><br />";
 open_flash_chart_object( 250, 250, get_option("url").'admin/stats/abs.php', false );

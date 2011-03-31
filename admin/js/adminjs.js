@@ -543,9 +543,73 @@ e.preventDefault();
 
 
 
+$("body").delegate("#gra", "click", function(e){
+e.preventDefault();
+
+		var id = $(this).attr("href");
+		var value;
+		
+		$.ajax({
+			type: "POST",
+			url: "process.php?do=getGr",
+			data: "id="+id ,
+			success: function(msg){
+
+				value = msg;
+				$("#editGrade").html('<b>Редактиране на оценка</b><br><form method="post" action="">'+
+				'<input type="text" name="grade" id="grade" value="'+value+'">'+
+				'<input type="submit" name="saveGrade" id="saveGr" rel = '+id+' value="Запази оценката">'+
+				'<br /><a id="delGrade" style="background:red;color:white;font-size:60%" href='+id+'>\[изтриване]</a></form>');
+				$("#editGrade").show();
+					//		alert(value);
+				}//success	
+		});
+			
+
+});//gradedit
 
 
+$("body").delegate("#saveGr", "click", function(e){
+e.preventDefault();
+var id = $("#saveGr").attr("rel");
+var val = $("#grade").attr("value");
+$.ajax({
+			type: "POST",
+			url: "process.php?do=saveGr",
+			data: "id="+id + "&val=" + val,
+			success: function(msg){
+				if(msg == "ok"){
+				serror(msg);
+ 				location.href = location.href;
+				}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
+				
+				}
+			}
+			
+					 });
+});
 
+$("body").delegate("#delGrade", "click", function(e){
+e.preventDefault();
+
+		var id = $(this).attr("href");
+		
+		var t = confirm("Наистина ли искате да изтриете оценката?");
+		
+		if(t){
+		$.ajax({
+			type: "POST",
+			url: "process.php?do=delGr",
+			data: "id="+id ,
+			success: function(msg){
+				if(msg == "ok"){
+				serror(msg);
+				location.href = location.href;
+				}else{serror("Something went wrong! Try again." + msg);location.href = location.href;}
+			}
+					 });
+		}//if t
+});//del grade
 
 
 

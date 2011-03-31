@@ -238,7 +238,7 @@ function checkLogin($uname, $p, $pp=0, $admin=0){
 					//echo "$p[name]: ".getGrades($uid, $p['id'])."<br />";
 				while($r = mysql_fetch_array($q)){
                 $ocenki[$i] = $r['value'];          //        onmouseover=\"showGradeInfo('$r[opisanie]', '$r[date]')\"
-				$ocenkiv .=  "<span id=\"gra\" title=\"$r[opisanie]\" data=\"$r[date]\">".$r['value']."</span>, "; 
+				$ocenkiv .=  "<span id=\"gra\" title=\"$r[opisanie]\" data=\"$r[date]\" href=\"$r[id]\">".$r['value']."</span>, \n"; 
 				$i++;
 				//echo "$p[id]: $ocenkiv<br/>";
                  }
@@ -560,7 +560,7 @@ EOT;
 		
 		function  getSubjs_list($id=-9){
 			$q = mysql_query("SELECT * FROM `predmet`");
-			echo "<option value=\"-9\" selected=\"selected\">------</option>\n";
+			echo "<option value=\"-9\" selected=\"selected\">Предмет...</option>\n";
 		while($r = mysql_fetch_array($q)){
 					if($id == $r['id']){
 					echo "<option value=\"$r[id]\" selected=\"selected\">>$r[name]</option>\n";
@@ -898,6 +898,19 @@ $v = 0;
 			}
 		}
 		
+		function getGradeDetail($det, $pid){
+		$q = mysql_query("SELECT * FROM `ocenka` WHERE `id` = $pid");
+			
+		while($r = mysql_fetch_array($q)){
+			return "$r[$det]";
+			}
+		}
+		
+		function setGradeDetail($wha, $det, $pid){
+		$q = mysql_query("UPDATE `ocenka` SET `$wha` = '$det' WHERE `id` = $pid;");
+		if($q){echo "ok";}else{echo "err";}
+		}
+		
 		function getFileDetail($det, $pid){
 		$q = mysql_query("SELECT * FROM `files` WHERE `id` = $pid");
 			
@@ -926,6 +939,7 @@ $v = 0;
 		
 		function getStudents_list($id=-9){
 		$q = mysql_query("SELECT * FROM `uchenik` ORDER BY `ime` ASC");
+		echo "<option value=\"-9\" selected=\"selected\">Ученик...</option>\n";
 		while($r = mysql_fetch_array($q)){
 					if($id == $r['id']){
 					echo "<option value=\"$r[id]\" selected=\"selected\">>$r[name]</option>\n";

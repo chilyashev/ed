@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
 	$uid = $_GET['id'];
 	
 }
-	$snimka = getStudentDetail("snimka", $id);
+	$snimka = getStudentDetail("snimka", $uid);
 		$sn = "<img src=\"".get_option("url")."img/userpics/".$snimka."\"  height=\"100\" />";
 		if(strlen($snimka) <3){
 			$sn = "<img src=\"".get_option("url")."img/userpics/nopic.png\" height=\"100\" /><br>";
@@ -113,6 +113,7 @@ echo "<center>".$sn."</center><br>";
 				<td>Нова снимка: <input name="logo" type="file" /><input name="go" type="submit" id="go" value="Качи" /></td>
 		</tr>
 </table>
+<?="<a href=\"editUser.php?w=".$_GET['t']."&id=".$_GET['id']."\">назад към потребителя</a>";?>
 </form></p>
 <?
 include "footer.php";

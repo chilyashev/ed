@@ -23,11 +23,11 @@ if($ok)
 </div>
 
 
-<!--<div id="mnupart"><div class="ttl"><a class="tog" id="2">Оценки</a></div>
+<div id="mnupart"><div class="ttl"><a class="tog" id="2">Оценки</a></div>
 <ul id="a2">
-{CRUD}
+<li><a href="<?=get_option("url")?>admin/?do=addGrade" id="addgrade">Добави оценка</a></li>
 </ul>
-</div>-->
+</div>
 
 <div id="mnupart"><div class="ttl"><a class="tog" id="4">Потребители</a></div>
 <ul id="a4">

@@ -79,7 +79,7 @@ $v++;
 				<script>actadmlink("#dashboard")</script>
 				<div id="info" style="float:left;">
 						<div id="title">
-								<h3>&nbsp;Статистика <a href="stats.php">още</a></h3>
+								<h3>&nbsp; <a href="stats.php">Статистики</a></h3>
 						</div>
 						<table width="100%" border="0" cellspacing="0" cellpadding="5">
 								<tr>
@@ -210,6 +210,14 @@ echo "</em></a>";
 				$inside = true;
 				include "addClass.php";
 				break; //addClas
+				
+				case "addGrade";
+				echo "<h2>&raquo;Добавяне на оценка</h2><br /><br />";
+				echo "<script>actadmlink(\"#addgrade\")</script>";
+				$inside = true;
+				include "addGrade_u.php";
+				break; //addClas
+				
 				case "addSubj";
 				echo "<h2>&raquo;Добавяне на предмет</h2><br /><br />";
 				echo "<script>actadmlink(\"#addsubj\")</script>";

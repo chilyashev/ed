@@ -70,6 +70,7 @@ if(isset($_GET['id'])){
 <legend>Оценки</legend>
 <?
 echo getGrades_e($uid, 0);?>
+<div id="editGrade" style="display:none"></div>
 </fieldset>
 <br />
 <fieldset>

@@ -49,7 +49,7 @@ $g->set_x_axis_steps(1);
 
 
 $g->set_y_max(cnt("ocenka")+1);
-$g->y_label_steps(cnt("ocenka")+1);
+$g->y_label_steps(6);
 //$g->set_y_legend('Open Flash Chart', 12, '#736AFF');
 echo $g->render();
 

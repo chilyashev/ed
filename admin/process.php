@@ -359,11 +359,22 @@ NULL , '$note', '$predmetID', '$date', '$uchenikID', '$userID'
 	
 	case "getGr";
 	if(isset($_POST['id'])){
-		
+		echo getGradeDetail("value", $_POST['id']);	
 	}
 	break;
 	
+	case "saveGr";
+	//($wha, $det, $pid)
+	if(isset($_POST['id']) && isset($_POST['val'])){
+		setGradeDetail("value", $_POST['val'], $_POST['id']);
+	}
+	break;
 	
+	case "delGr";
+	if(isset($_POST['id'])){
+		del("ocenka", $_POST['id']);	
+	}
+	break;
 	
 default;
 break;
