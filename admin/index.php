@@ -216,7 +216,14 @@ echo "</em></a>";
 				echo "<script>actadmlink(\"#addgrade\")</script>";
 				$inside = true;
 				include "addGrade_u.php";
-				break; //addClas
+				break; //addGrade
+				
+				case "addAbs";
+				echo "<h2>&raquo;Добавяне на оценка</h2><br /><br />";
+				echo "<script>actadmlink(\"#addabs\")</script>";
+				$inside = true;
+				include "addAbs_u.php";
+				break; //addGrade
 				
 				case "addSubj";
 				echo "<h2>&raquo;Добавяне на предмет</h2><br /><br />";
