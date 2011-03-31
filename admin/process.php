@@ -355,6 +355,16 @@ NULL , '$note', '$predmetID', '$date', '$uchenikID', '$userID'
 	delNews($_POST['id']);
 	}
 	break; //break del news
+	
+	
+	case "getGr";
+	if(isset($_POST['id'])){
+		
+	}
+	break;
+	
+	
+	
 default;
 break;
 }//switch

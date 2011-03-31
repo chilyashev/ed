@@ -41,14 +41,14 @@ $q=mysql_query("UPDATE `option` SET `value` = '$f' WHERE `option`.`key` ='logo';
 
 if($q)
 {
-echo "Качено!<script>location.href=\"".get_option("url")".admin?do=edit&w=app\"</script>";
+echo "Качено!<script>location.href=\"".get_option("url")."admin?do=edit&w=app\"</script>";
 }else{
 echo "error";
 exit;
 }
 }
 }else{
-echo '<img src="'.get_option("url")."img/logo/".get_option("logo").'" width="100px" >';
+echo '<div style="margin: 0 auto;"><img src="'.get_option("url")."img/logo/".get_option("logo").'" width="100px" ></div>';
 
 }
 ?></td>

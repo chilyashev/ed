@@ -1,4 +1,5 @@
 <?php
+//really need to think of a better way to do this
 include "../../conf/fnoc.php";
 include "../../inc/functions.php";
 error_reporting(E_ALL);

@@ -1,6 +1,9 @@
 <? 
 include "../conf/fnoc.php";
-
+/**
+* @author Mihail Chilyashev
+* @version 0.1
+*/
 if(function_exists($_GET['method']) && isset($_GET['id']) && $_GET['method'] != "getAbs"){
 		$_GET['method']($_GET['id']);
 	}
@@ -13,17 +16,11 @@ else if(function_exists($_GET['method']) && isset($_GET['user']) && isset($_GET[
 	else{
 	echo "Unknown method";
 	}
-	/*
-function getAllUsers(){
-		$q = mysql_query("SELECT * FROM `user`");
-		$users = array();
-		while($user = mysql_fetch_array($q)){
-				$users[] = $user;
-			}
-		$users = json_encode($users);
-		//echo $_GET['jsoncallback']. '('. $users . ')';
-	}*/
 
+/**
+* @param int id
+* @return mixed
+*/
 function getGrades($id){
 	header('Content-type: text/xml');
 		$q = mysql_query("SELECT * FROM `ocenka` WHERE `uchenikID` = $id");
