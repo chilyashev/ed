@@ -1,8 +1,6 @@
-
-    <!-- /content --></div>
-  <div class="footer">
-  
-Copyleft, sasli<span style="float:right;"><?=$version?></span> 
+<!-- /content -->
+</div>
+<div class="footer">Powered by ed <?=$version?> 
 
 <?
 $mtime = microtime();
