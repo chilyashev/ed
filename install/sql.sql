@@ -14,10 +14,8 @@ CREATE TABLE IF NOT EXISTS `class` (
   `gore` varchar(255) NOT NULL,
   `specialnost` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `class` (`id`, `name`, `dolu`, `gore`, `specialnost`) VALUES
-(35, '10', '7', 'Ð³', 'Ð"ÐµÐ¾Ð´ÐµÐ·Ð¸Ñ');
 
 DROP TABLE IF EXISTS `files`;
 CREATE TABLE IF NOT EXISTS `files` (
@@ -27,10 +25,8 @@ CREATE TABLE IF NOT EXISTS `files` (
   `date` varchar(255) NOT NULL,
   `userID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `files` (`id`, `file`, `type`, `date`, `userID`) VALUES
-(10, '0.jpg', '1', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:21:02', 64);
 
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
@@ -40,10 +36,8 @@ CREATE TABLE IF NOT EXISTS `news` (
   `authorID` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `news` (`id`, `title`, `body`, `authorID`, `date`) VALUES
-(34, 'Ð•Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¸ÑÑ‚ Ð´Ð½ÐµÐ²Ð½Ð¸Ðº Ðµ Ð¸Ð½ÑÑ‚Ð°Ð»Ð¸Ñ€Ð°Ð½  ÑƒÑÐ¿ÐµÑˆÐ½Ð¾!', '<p>Ð"Ð¾Ð±Ñ€Ðµ Ð´Ð¾ÑˆÐ»Ð¸ Ð² Ñ‡Ð¸ÑÑ‚Ð¾ Ð½Ð¾Ð²Ð¸Ñ ÑÐ¸ Ð´Ð½ÐµÐ²Ð½Ð¸Ðº. Ð'Ð»ÐµÐ·Ñ‚Ðµ Ð² Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€ÑÐºÐ¸Ñ Ð¿Ð°Ð½ÐµÐ», Ð·Ð° Ð´Ð° Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð°Ñ‚Ðµ Ñ‚Ð°Ð·Ð¸ Ð½Ð¾Ð²Ð¸Ð½Ð°, Ð´Ð° Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚Ðµ ÑƒÑ‡ÐµÐ½Ð¸Ñ†Ð¸ Ð¸ Ð´Ð° Ð·Ð°Ð¿Ð¾Ñ‡Ð½ÐµÑ‚Ðµ Ð´Ð° Ð¸Ð·Ð¿Ð¾Ð»Ð·Ð²Ð°Ñ‚Ðµ Ð´Ð½ÐµÐ²Ð½Ð¸ÐºÐ°.</p>', '64', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:09:07');
 
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE IF NOT EXISTS `notes` (
@@ -54,10 +48,8 @@ CREATE TABLE IF NOT EXISTS `notes` (
   `uchenikID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `notes` (`id`, `note`, `predmetID`, `date`, `uchenikID`, `userID`) VALUES
-(11, 'Zabelejka', 53, '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:30:13', 46, 0);
 
 DROP TABLE IF EXISTS `ocenka`;
 CREATE TABLE IF NOT EXISTS `ocenka` (
@@ -70,10 +62,7 @@ CREATE TABLE IF NOT EXISTS `ocenka` (
   `uchenikID` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uchenikID` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1275 ;
-
-INSERT INTO `ocenka` (`id`, `value`, `predmetID`, `opisanie`, `vid`, `date`, `uchenikID`) VALUES
-(1274, '5.55', '53', 'test', 0, '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:29:27', 46);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -89,16 +78,18 @@ CREATE TABLE IF NOT EXISTS `option` (
   `key` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO `option` (`id`, `key`, `value`) VALUES
-(5, 'address', 'address'),
-(4, 'direktor', 'direktor'),
-(8, 'logo', 'logo.png'),
-(3, 'phone', '+1234567896'),
-(9, 'headcolor', '227bf0'),
-(11, 'headfgcolor', '000000');
-(15, 'text', 'Ð”Ð¾Ð¿ÑŠÐ»Ð½Ð¸Ñ‚ÐµÐ»ÐµÐ½ Ñ‚ÐµÐºÑÑ‚\r\n');
+(NULL, 'address', ''),
+(NULL, 'direktor', ''),
+(NULL, 'logo', ''),
+(NULL, 'phone', ''),
+(NULL, 'headcolor', '227bf0'),
+(NULL, 'headfgcolor', '000000');
+(NULL, 'text', '');
+
+
 
 DROP TABLE IF EXISTS `otsastvie`;
 CREATE TABLE IF NOT EXISTS `otsastvie` (
@@ -109,11 +100,8 @@ CREATE TABLE IF NOT EXISTS `otsastvie` (
   `predmetID` int(11) NOT NULL,
   `uchenikID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `otsastvie` (`id`, `type`, `opisanie`, `date`, `predmetID`, `uchenikID`) VALUES
-(32, '0', '1246-03-04', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:29:48', -9, 46),
-(33, '1', 'test', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:30:03', -9, 46);
 
 DROP TABLE IF EXISTS `page`;
 CREATE TABLE IF NOT EXISTS `page` (
@@ -124,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `page` (
   `date` varchar(255) NOT NULL,
   `authorID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
 DROP TABLE IF EXISTS `predmet`;
@@ -134,10 +122,7 @@ CREATE TABLE IF NOT EXISTS `predmet` (
   `class` varchar(255) NOT NULL,
   `userID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
-
-INSERT INTO `predmet` (`id`, `name`, `class`, `userID`) VALUES
-(53, 'ÐœÐ°Ñ‚ÐµÐ¼Ð°Ñ‚Ð¸ÐºÐ°', '35', 64);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS `roditel`;
 CREATE TABLE IF NOT EXISTS `roditel` (
@@ -153,10 +138,7 @@ CREATE TABLE IF NOT EXISTS `roditel` (
   `role` int(11) NOT NULL,
   `passkey` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
-
-INSERT INTO `roditel` (`id`, `username`, `password`, `email`, `snimka`, `name`, `kidID`, `date`, `state`, `role`, `passkey`) VALUES
-(26, 'roditel', 'acd8ce339946b11fa75f483c72ece57a', 'roditel@abv.bg', '', '', '46', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:14:13', '1', 0, '');
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS `uchenik`;
 CREATE TABLE IF NOT EXISTS `uchenik` (
@@ -174,10 +156,9 @@ CREATE TABLE IF NOT EXISTS `uchenik` (
   `role` int(11) NOT NULL DEFAULT '1',
   `roditelID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-INSERT INTO `uchenik` (`id`, `ime`, `egn`, `pass`, `address`, `email`, `nomerVklas`, `classID`, `snimka`, `dateReg`, `note`, `role`, `roditelID`) VALUES
-(46, 'Ð£Ñ‡ÐµÐ½Ð¸Ðº Ð¢ÐµÑÑ‚', '1234567890', '', 'ÐÑÐ¼Ð°', 'a@a.aaaa', '1', 35, 'undefined', '24 Ð¼Ð°Ñ€Ñ‚ 2011 22:13:26', '', 1, 0);
+
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
@@ -193,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `approved` int(11) NOT NULL,
   `classID` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `name`, `email`, `snimka`, `dateReg`, `predmetID`, `approved`, `classID`) VALUES
-(64, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2', 'Administrator', 'admin@nowhere.com', '', '16 ???? 2011 01:41:04', -9, 1, -9);
+(NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2', 'Administrator', 'admin@nowhere.com', '', '16 ???? 2011 01:41:04', -9, 1, -9);
