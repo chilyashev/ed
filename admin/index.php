@@ -223,7 +223,14 @@ echo "</em></a>";
 				echo "<script>actadmlink(\"#addabs\")</script>";
 				$inside = true;
 				include "addAbs_u.php";
-				break; //addGrade
+				break; //addAbs
+				
+				case "addZab";
+				echo "<h2>&raquo;Добавяне на забележка</h2><br /><br />";
+				echo "<script>actadmlink(\"#addzab\")</script>";
+				$inside = true;
+				include "addZab_u.php";
+				break; //addAbs
 				
 				case "addSubj";
 				echo "<h2>&raquo;Добавяне на предмет</h2><br /><br />";

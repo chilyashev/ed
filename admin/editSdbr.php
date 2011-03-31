@@ -2,7 +2,7 @@
 <?
 if(defined(INSIDE)){
 	if(isset($_POST['saveApp'])){
-		$text = htmlspecialchars($_POST['txt']);
+		$text = $_POST['txt'];
 		//echo update_option("headfgcolor", $headfgcolor);
 		if(update_option("text", $text)){
 								?><script type="text/javascript">
