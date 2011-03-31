@@ -188,7 +188,7 @@ if($q){
 </table>
 </form>
 <?
-// един празен ред за suspens:
+// един празен ред за suspense:
 
 ?>
 </body>
