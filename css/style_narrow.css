@@ -157,7 +157,16 @@ padding: 8px;
 #lmenu li a:hover {
 	background: #CCC;
 }
-
+#search{
+background: url(../img/icons/srch.png);
+	background-repeat: no-repeat;
+	background-position: 3px 2px;
+	font-weight: normal;
+	color: #333333;
+	border-width: 1px;
+	border-color: #999999;
+	padding-left: 20px;	
+	}
 #sdbrprfl{
 	padding: 5px;
 	}

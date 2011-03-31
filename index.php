@@ -17,7 +17,8 @@ switch($do){
 		switch($_GET['w']){		
 		case "news";
 			if(isset($_GET['id'])){
-				getNovina($_GET['id'], $ok, $role, 1);
+
+getNovina($_GET['id'], $ok, $role, 1);
 				}//isset id	
 				else{
 					//getNews(100, $ok, $role);
@@ -86,9 +87,11 @@ else{ //ne e lognat
 	echo '</div>';
 	}//else $ok
 	
+if(cnt("news") >= 1){
 	echo "<br />
 <br />
 <h3>Последни новини:</h3>";
+}
 	pagination("news", 3, 3, $ok, $role, 0);
 break;//break default
 }//switch do

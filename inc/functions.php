@@ -652,9 +652,13 @@ EOT;
 		$q = mysql_query("SELECT * FROM  `news` WHERE `id`=$id");
 		if(mysql_num_rows($q) > 0)	{
 			while($r = mysql_fetch_array($q)){
+				?>					<script type="text/javascript">
+where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; <?=$r['title']?>");
+</script><?
 					echo "";
 					if($type == 0){
 					?>
+
 <table width="660px" id="novina" border="0" cellspacing="0" cellpadding="0">
 		<tr id="ntitle">
 				<td width="6">&nbsp;</td>
@@ -1054,7 +1058,7 @@ srch;
 		echo <<<srch
 		<div id="searchfrm" style="margin:5px 0;">
 		<form method="post" action="search.php">
-		<input type="text" class="inp" id="search" name="search" value="$srch"  onFocus="if(this.value=='Търси...')this.value='';"/>
+		<input type="text" class="inp" id="search" tabindex=3 name="search" value="$srch" onFocus="if(this.value=='Търси...')this.value='';"/>
 srch;
 		if($btn){echo '<input type="submit" value="Търси" class="inp" name="searchbtn" id="searchbtn" />';}
 		echo "</form></div><br /><br/>";

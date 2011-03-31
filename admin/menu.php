@@ -1,7 +1,6 @@
 <div id="lmenu">
 <?
 
-		//echo "<hr /><div id=\"cal\"></div><br />";
 if($ok)
 {
 ?>
@@ -26,6 +25,18 @@ if($ok)
 <div id="mnupart"><div class="ttl"><a class="tog" id="2">Оценки</a></div>
 <ul id="a2">
 <li><a href="<?=get_option("url")?>admin/?do=addGrade" id="addgrade">Добави оценка</a></li>
+</ul>
+</div>
+
+<div id="mnupart"><div class="ttl"><a class="tog" id="55">Отсъствия</a></div>
+<ul id="a55">
+<li><a href="<?=get_option("url")?>admin/?do=addAbs" id="addabs">Добави отсъствие</a></li>
+</ul>
+</div>
+
+<div id="mnupart"><div class="ttl"><a class="tog" id="66">Зажележки</a></div>
+<ul id="a66">
+<li><a href="<?=get_option("url")?>admin/?do=addZab" id="addzab">Добави забележка</a></li>
 </ul>
 </div>
 

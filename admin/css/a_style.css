@@ -230,6 +230,17 @@ legend {
 
 #gra{cursor:pointer;}
 
+#search{
+background: url(../../img/icons/srch.png);
+	background-repeat: no-repeat;
+	background-position: 3px 2px;
+	font-weight: normal;
+	color: #333333;
+	border-width: 1px;
+	border-color: #999999;
+	padding-left: 20px;	
+	}
+	
 #editGrade{
 	width:auto;
 	padding: 10px;

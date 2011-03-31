@@ -39,7 +39,7 @@ if($upload){
 	$f = basename($file);
 $q=mysql_query("UPDATE `option` SET `value` = '$f' WHERE `option`.`key` ='logo';");
 
-if($q)
+if($q && $upload)
 {
 echo "Качено!<script>location.href=\"".get_option("url")."admin?do=edit&w=app\"</script>";
 }else{
