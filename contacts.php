@@ -7,6 +7,7 @@ include "inc/header.php";
 actlink("#contacts");
 where("<a href='<?=get_option("url")?>'>Начало</a> &rarr; Контакти");
 </script>
+<h2>&raquo; Контакти</h2>
 		<table width="600px" border="0" cellspacing="5" cellpadding="5" style="vertical-align:top">
 				<tr>
 						<td width="41">e-mail</td>
