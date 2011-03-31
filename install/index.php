@@ -39,7 +39,7 @@ $data = '<?
 error_reporting(E_ALL);
 ini_set("display_errors", 1); 
 //nastroiki
-$version = "v 1.66b (2010-03-16 00:36)";
+$version = "v 1.66b (2010-04-01 01:06)"; // ne e samo za fuknq. Po-natatyk shte se izpolzva za proverka za update.
 include "data.php";
 ###### glavni ######
 $global = array();

@@ -1,6 +1,7 @@
 <!-- /content -->
 </div>
-<div class="footer">Powered by ed <?=$version?> 
+<div class="footer"><small><a href="<?=get_option("url")?>">Назад към сайта</a><br />
+Powered by ed <?=$version?> </small>
 
 <?
 $mtime = microtime();
@@ -10,7 +11,7 @@ $mtime = $mtime[1] + $mtime[0];
 $tend = $mtime;
 $totaltime = ($tend - $tstart);
 
-printf ("Страницата зареди за %f секунди.", $totaltime);
+printf ("<small>Страницата зареди за %f секунди.</small>", $totaltime);
 ob_flush();
 ?>
      <!-- /footer --></div>
