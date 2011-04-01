@@ -273,7 +273,7 @@ case "par";
 			$kids_e = explode(", ", $kids);
 			if(strlen($kids) > 1){
 				foreach ($kids_e as $t){
-					echo getStudentDetail("ime", $t)."<a class=\"rmStu\" id=\"$uid\" href=\"$t\" rel=\"$kids\" >".getIcon("delete.png", 16)."</a><br />";
+					echo "<a href=\"editUser.php?w=stu&id=$t\">".getStudentDetail("ime", $t)."</a> <a class=\"rmStu\" id=\"$uid\" href=\"$t\" rel=\"$kids\" >".getIcon("delete.png", 16)."</a><br />";
 				}	
 				} // if kids > 1			
 				?>
