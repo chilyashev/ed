@@ -12,9 +12,10 @@ $tend = $mtime;
 $totaltime = ($tend - $tstart);
 
 printf ("<small>Страницата зареди за %f секунди.</small>", $totaltime);
-ob_flush();
+
 ?>
      <!-- /footer --></div>
   <!-- /container --></div>
 </body>
 </html>
+<?ob_flush();?>

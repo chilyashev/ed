@@ -9,10 +9,7 @@
 		$email = htmlspecialchars($_POST['email']);
 		$name = htmlspecialchars($_POST['name']);
 		$kidID = "";
-		/*$test=$_POST['test'];
-	if ($test){
-	 foreach ($test as $t){echo 'You selected ',$t,'<br />';}
-	}*/
+		
 	$kids=$_POST['kid'];
 	if ($kids){
 	 foreach ($kids as $t){$kidID .= $t.", ";}

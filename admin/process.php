@@ -341,15 +341,12 @@ NULL , '$note', '$predmetID', '$date', '$uchenikID', '$userID'
 );
 ");
 //echo "$val $predmetID $opisanie $uchenikID";
+
 	if($q){echo "note added"; return 1;}else{echo "BOOOM! ".mysql_error();return 0;}
 	
 	break; //addabs	
-	
-	
-	
-	
-	
-	
+
+
 	case "delNews";
 	if(isset($_POST['id'])){
 	delNews($_POST['id']);
@@ -375,6 +372,38 @@ NULL , '$note', '$predmetID', '$date', '$uchenikID', '$userID'
 		del("ocenka", $_POST['id']);	
 	}
 	break;
+
+	case "rmStu";
+	if(isset($_POST['id']) && isset($_POST['all']) && isset($_POST['rid'])){
+	$rmid = $_POST['id']; // kid id
+	$all = $_POST['all']; // all kids
+	$rid = $_POST['rid']; // parentID
+	//echo "id to remove: $rmid\n";
+	//echo "before: $all\n";
+	
+	//messy code, dude, fix it later
+	$all = str_replace($rmid.", ", "", $all);
+	$all = str_replace(", ".$rmid, "", $all);
+	$all = str_replace(", ".$rmid.", ", "", $all);		
+	$all = str_replace($rmid, "", $all);
+	//setParentDetail($wha, $det, $pid)
+	setParentDetail("kidID", $all, $rid);
+	//echo "after: $all";
+	}else{echo 'boom';}
+	break; //rmStu
+	
+	case "addS";
+	if(isset($_POST['id']) && isset($_POST['all']) && isset($_POST['kid'])){
+	$rid = $_POST['id']; // parent id
+	$all = $_POST['all']; // all kids
+	$kid = $_POST['kid']; // kid id
+	echo "before: $all\n";
+	$all = $kid.", ".$all; //dobavqm go v nachaloto, zashtoto e po-lesno :)
+	
+	setParentDetail("kidID", $all, $rid);
+	echo "after: $all\n";
+	}//if isset stuff
+	break; //addS
 	
 default;
 break;

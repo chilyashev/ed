@@ -219,7 +219,7 @@ echo "</em></a>";
 				break; //addGrade
 				
 				case "addAbs";
-				echo "<h2>&raquo;Добавяне на оценка</h2><br /><br />";
+				echo "<h2>&raquo;Добавяне на отсъствие</h2><br /><br />";
 				echo "<script>actadmlink(\"#addabs\")</script>";
 				$inside = true;
 				include "addAbs_u.php";

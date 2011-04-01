@@ -137,20 +137,6 @@ $q = mysql_query("UPDATE `user` SET `username` = '$username',
 }//else chpass
 if($q){wrn("Промените запазени!");}else{}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	}
 ?>
  <form method="post" action="">
@@ -201,13 +187,6 @@ if($q){wrn("Промените запазени!");}else{}
 }//if isset id
 break;//break t
 
-
-
-
-
-
-
-
 case "par";
 	$name = getParentDetail("name", $uid);
 	$email = getParentDetail("email", $uid);
@@ -223,6 +202,8 @@ case "par";
 			$newmail = htmlspecialchars(strip_tags($_POST['email']));
 			$newpass = htmlspecialchars(strip_tags($_POST['newpass']));
 			$newpasscnfrm = htmlspecialchars(strip_tags($_POST['newpasscnfrm']));
+			$kids = getParentDetail("kidID", $uid);
+			$kids_e = explode(", ", $kids);
 			if(strlen($newpass) > 0){
 				if(strlen($newpass) <3){
 				error("Паролата трябва да е поне 3 символа!");
@@ -255,7 +236,7 @@ case "par";
 					
 				}
 		
-				else{/*нишо не правим*/}
+				else{/*нищо не правим*/}
 		}
 	?>
 	<h2>&raquo;Профил на <?=$name?><br><br></h2>
@@ -282,6 +263,25 @@ case "par";
 				 <small><a href="changeAvatar.php?t=par&id=<?=$uid?>">смени</a></small></td>
 		</tr>
 		<tr>
+				<td>Родител на<?="<a class=\"addS\" href=\"$kids\" id=\"$uid\" rel=\"tooltip\" title=\"Добавяне на ученик\">".getIcon("add.png", 16)."</a>";?></td>
+				<td>
+				<?
+				foreach ($kids_e as $t){
+				$kids = getParentDetail("kidID", $uid);
+			$kids_e = explode(", ", $kids);
+					echo getStudentDetail("ime", $t)."<a class=\"rmStu\" id=\"$uid\" href=\"$t\" rel=\"$kids\" >".getIcon("delete.png", 16)."</a><br />";
+				}				
+				?>
+				<br />
+					<div id="addSdiv" style="display:none;background:#E3E3E3;width:250px;"><a href="#" id="closeAddS" style="float:right">[X]</a>
+					<form method="post">
+					<select name="uchenikID" id="uchenikID" class="inp"><?=getStudents_list(1)?></select>
+					<input type="submit" id="<?=$uid?>" href="<?=$kids?>" rel="" class="doAddS" value="Добави">
+   					</form>
+   					</div>
+				</td>
+		</tr>
+		<tr>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 		</tr>
@@ -302,14 +302,8 @@ case "par";
 <?
 break; //break par
 
-
-
-
-
-
-
 default;
-echo "a";
+echo "not gonna happen";
 break;//
 
 	}//swich w

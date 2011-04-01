@@ -650,16 +650,61 @@ $('#headfgcolor').ColorPicker({
 
 
 
+$("body").delegate(".rmStu", "click", function(e){
+e.preventDefault();
+var id = $(this).attr("href");
+var all = $(this).attr("rel");
+var rid = $(this).attr("id");
+//alert("id="+id + "&all=" + all +"&rid=" + rid);
+$.ajax({
+	type: "POST",
+	url: "process.php?do=rmStu",
+	data: "id="+id + "&all=" + all +"&rid=" + rid,
+	success: function(msg){
+//		if(msg == "ok"){
+		alert(msg);
+ 		location.href = location.href;
+//		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
+	
+		}
+	//}
+
+	});
+});//rmStu
 
 
+$("body").delegate(".addS", "click", function(e){
+e.preventDefault();
+$("#addSdiv").show();
+});//rmStu
 
+$("body").delegate("#closeAddS", "click", function(e){
+e.preventDefault();
+$("#addSdiv").hide();
+});
 
+$("body").delegate(".doAddS", "click", function(e){
+e.preventDefault();
+var id = $(this).attr("id");
+var all = $(this).attr("href");
+var kid = $("#uchenikID").val();
+//alert("id="+id + "&all=" + all +"&rid=" + rid);
 
+$.ajax({
+	type: "POST",
+	url: "process.php?do=addS",
+	data: "id="+id + "&all=" + all + "&kid=" + kid,
+	success: function(msg){
+//		if(msg == "ok"){
+		alert(msg);
+ 		location.href = location.href;
+//		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
+	
+		}
+	//}
 
-
-
-
-
+	});
+});
 
 
 
