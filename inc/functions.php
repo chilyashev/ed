@@ -941,8 +941,8 @@ $v = 0;
 		if($q){echo "ok";}else{echo "err";}
 		}
 		
-		function getStudents_list($type=0,$id=-9){
-		$q = mysql_query("SELECT * FROM `uchenik` ORDER BY `ime` ASC");
+		function getStudents_list($type=0,$id=-9, $extra=""){
+		$q = mysql_query("SELECT * FROM `uchenik` $extra ORDER BY `ime` ASC");
 		echo ($type ==0)? "<option value=\"-9\" selected=\"selected\">Ученик...</option>\n":"";
 		while($r = mysql_fetch_array($q)){
 					if($id == $r['id']){

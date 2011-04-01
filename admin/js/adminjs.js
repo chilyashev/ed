@@ -661,13 +661,13 @@ $.ajax({
 	url: "process.php?do=rmStu",
 	data: "id="+id + "&all=" + all +"&rid=" + rid,
 	success: function(msg){
-//		if(msg == "ok"){
-		alert(msg);
+		if(msg == "ok"){
+		serror(msg);
  		location.href = location.href;
-//		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
+		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
 	
 		}
-	//}
+	}
 
 	});
 });//rmStu
@@ -695,13 +695,13 @@ $.ajax({
 	url: "process.php?do=addS",
 	data: "id="+id + "&all=" + all + "&kid=" + kid,
 	success: function(msg){
-//		if(msg == "ok"){
-		alert(msg);
+		if(msg == "ok"){
+		serror(msg);
  		location.href = location.href;
-//		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
+		}else{serror("Something went wrong! Try again." + msg);//location.href = location.href;
 	
 		}
-	//}
+	}
 
 	});
 });

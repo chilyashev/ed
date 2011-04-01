@@ -300,7 +300,7 @@ case "par";
 		</tr>
 		<tr>
 				<td>&nbsp;</td>
-				<td><input type="submit" name="sp" id="sp" value="Запази промените"></td>
+				<td><input type="submit" name="sp" id="sp" class="inp" value="Запази промените"></td>
 		</tr>
 </table>
 </form>
