@@ -266,11 +266,16 @@ case "par";
 				<td>Родител на<?="<a class=\"addS\" href=\"$kids\" id=\"$uid\" rel=\"tooltip\" title=\"Добавяне на ученик\">".getIcon("add.png", 16)."</a>";?></td>
 				<td>
 				<?
-				foreach ($kids_e as $t){
 				$kids = getParentDetail("kidID", $uid);
+				if(substr($kids, strlen($kids)-2, strlen($kids)) === ", "){
+					$kids = str_replace(", ", "", $kids);
+				}//if only one
 			$kids_e = explode(", ", $kids);
+			if(strlen($kids) > 1){
+				foreach ($kids_e as $t){
 					echo getStudentDetail("ime", $t)."<a class=\"rmStu\" id=\"$uid\" href=\"$t\" rel=\"$kids\" >".getIcon("delete.png", 16)."</a><br />";
-				}				
+				}	
+				} // if kids > 1			
 				?>
 				<br />
 					<div id="addSdiv" style="display:none;background:#E3E3E3;width:250px;"><a href="#" id="closeAddS" style="float:right">[X]</a>

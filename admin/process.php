@@ -395,9 +395,9 @@ NULL , '$note', '$predmetID', '$date', '$uchenikID', '$userID'
 	case "addS";
 	if(isset($_POST['id']) && isset($_POST['all']) && isset($_POST['kid'])){
 	$rid = $_POST['id']; // parent id
-	$all = $_POST['all']; // all kids
+	$all = getParentDetail("kidID", $rid); // all kids
 	$kid = $_POST['kid']; // kid id
-	echo "before: $all\n";
+	echo "before: \$all = $all, \$rid = $rid, \$kid = $kid\n";
 	$all = $kid.", ".$all; //dobavqm go v nachaloto, zashtoto e po-lesno :)
 	
 	setParentDetail("kidID", $all, $rid);
