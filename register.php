@@ -7,8 +7,8 @@ if($ok){goHome();}else{
 	if(isset($_POST['reg'])){
 		$okk = true;
 		$date = data();
-		$username = htmlspecialchars($_POST['username']);
-		$pass = md5(htmlspecialchars($_POST['pass']));
+		$username = htmlspecialchars(strip_tags($_POST['username']));
+		$pass = md5(htmlspecialchars(strip_tags($_POST['pass'])));
 		$pass_une = $_POST['pass'];
 		$email = htmlspecialchars($_POST['email']);
 		$name = htmlspecialchars($_POST['name']);
