@@ -400,7 +400,9 @@ EOT;
 		function delStudent($id){
 		$q = mysql_query("DELETE FROM `uchenik` WHERE `id` = '$id'");
 		$q1 = mysql_query("DELETE FROM `ocenka` WHERE `uchenikID` = '$id'");
-		if($q){echo "deleted";}else{echo "error: ".mysql_error();}
+		$q2 = mysql_query("DELETE FROM `otsastvie` WHERE `uchenikID` = '$id'");
+		$q3 = mysql_query("DELETE FROM `notes` WHERE `uchenikID` = '$id'");
+		if($q && $q1 && $q3 && $q3){echo "ok";}else{echo "error: ".mysql_error();}
 		}
 		
 		function delNews($id){

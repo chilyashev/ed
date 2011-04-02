@@ -17,14 +17,11 @@ deletecookie("egn");
       setcookie("pass", "", 1, "/");
       setcookie("egn", "", 1, "/");
 /*
-setcookie("user");
-setcookie("pass");
-setcookie("egn");
  if(setcookie("user", "", time()+3600, "/") &&  setcookie("pass", "", time()+3600, "/") && setcookie("egn", "", time()+3600, "/")){*/
 echo '<meta http-equiv="refresh" content="0;URL=../index.php" />';
 /* }
  else{
-	 echo "ERROR!";
+	 echo "BOOOOM!";
 	 }*/
 	 ob_flush();
  ?>
